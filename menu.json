@@ -1,0 +1,57 @@
+{
+  "menu": [{
+      "name": "Fish n' Sticks",
+      "price": 12,
+      "desc": "Fresh caught fish from the ala wai! Comes with fries!"
+
+
+    },
+    {
+      "name": "Soup of the day",
+      "price": 3,
+      "desc": "Whatever the chef feels like making today,comes with free soup of the day."
+
+
+    },
+    {
+      "name": "Salad",
+      "price": 4,
+      "desc": "On a diet? This will be a great choice for you!"
+
+
+    }, {
+      "name": "Fountain Drink",
+      "price": 2,
+      "desc": "Assorted drinks, One size only (WARNING: CONTAINS HYDRIC ACID)",
+      "type":["coke","root beer","cream soda","pure hydric acid","pepsi","sprite"]
+
+
+    }, {
+      "name": "Spaghetti",
+      "price": 12,
+      "desc": "Simple Spghetti with beef meatballs,A classic dish that is served by our italian chefs, comes with soup of the day."
+
+
+    }, {
+      "name": "Double Egg Omelet",
+      "price": 11,
+      "desc": "Omelet only made from rare double yolk eggs, comes with 4 bacon and soup of the day."
+
+
+    }, {
+      "name": "Mega Donker",
+      "price": 14,
+      "desc": "Our world-famous singature burger, made with our super secret recipe."
+
+
+    },
+     {
+      "name": "Ice Cream",
+      "price": 4,
+      "desc": "Smooth and delicous ice cream made from 100% milk.",
+      "type":["choccolate","vanilla","strawberry","cookies 'n cream","surprise"]
+
+
+    }
+  ]
+}

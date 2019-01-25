@@ -1,0 +1,327 @@
+@keyframes nav-wel {
+  0% {
+    transform: translateX(-15vh);
+  }
+}
+
+@keyframes blocker {
+  0% {
+    transform: translateY(-15vh);
+  }
+}
+@keyframes makingitlooknice {
+  0% {
+    transform: translateY(15vh);
+  }
+}@keyframes error {
+  0% {
+    background-color:red;
+    color:white;
+  }
+  50%{
+    background-color:white;
+    color:red;
+  }
+  100%{
+    background-color:red;
+    color:white;
+  }
+}
+
+
+/*apprently you cant have classes and ids together without messing up the script
+for fucks sake this is a long ass file due to 50% of it being button styles
+for every button in every goddam room*/
+
+.navbar {
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  text-decoration: none;
+  margin: auto;
+  margin-top: -.5vh;
+  vertical-align: top;
+  margin-left: -.5vw;
+  z-index: 1;
+  animation-name: blocker;
+  animation-duration: 501ms;
+  animation-iteration-count: 1;
+  align: center;
+  /*border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; */
+}
+
+li{
+  animation-name: nav-wel;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+}
+
+div {
+  animation-name: makingitlooknice;
+  animation-duration: 501ms;
+  animation-iteration-count: 1;
+}
+
+.logo {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: auto;
+  margin-top: .25vh;
+}
+
+.home {
+  background-color: rgba(0, 0, 0, 0.81);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.home:hover {
+  background-color: rgba(238, 238, 238, 0.81);
+  color: black;
+}
+
+#logger {
+  width: 55vw;
+  height:32.5vh;
+  background-color: #ffffff;
+  border-color:#C5B358;
+  border-style: double;
+  border-radius: 15px;
+  border-width:15px;
+  overflow: auto;
+  float:right;
+  position:relative;
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+    margin-top: 9vh;
+  margin-left: 1.35vw;
+  margin-bottom: 1.5vh;
+}
+#room1 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #1B1B1B;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 0%;
+  padding: 12px;
+  font-size: 14.5px;
+  float:left;
+  position:relative;
+}
+#room2 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #1B1B1B;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 0%;
+  padding: 12px;
+  font-size: 14.5px;
+  float:left;
+  position:relative;
+}
+#room3 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #1B1B1B;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 0%;
+  padding: 12px;
+  font-size: 14.5px;
+  float:left;
+  position:relative;
+}
+#room4 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #1B1B1B;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 0%;
+  padding: 12px;
+  position:relative;
+  font-size: 14.5px;
+  float:left;
+}
+#room5 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #1B1B1B;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 0%;
+  padding: 12px;
+  font-size: 14.5px;
+  position:relative;
+  float:left;
+}
+#room6 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #C5B358;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 1.5vw;
+  padding: 12px;
+  font-size: 14.5px;
+  position:relative;
+  float:left;
+}
+#room7 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #C5B358;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 1.5vw;
+  padding: 12px;
+  font-size: 14.5px;
+  position:relative;
+  float:left;
+}
+#room8 {
+  height: 32.5vh;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #C5B358;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 9vh;
+  margin-left: 1.25vw;
+  margin-bottom: 1.5vw;
+  padding: 12px;
+  font-size: 14.5px;
+  position:relative;
+  float:left;
+}
+h2{
+  text-align:center;
+}
+img {
+  margin:auto;
+  display:block;
+  border-radius:15px;
+}
+
+#alert {
+  background-color: red;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  animation-name: blocker;
+  animation-duration: 551ms;
+  animation-iteration-count: 1;
+  font-size: 16px;
+  animation-name: error;
+  animation-duration: 750ms;
+  animation-iteration-count: infinite;
+}
+h1 {
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+}
+
+body {
+  background-color: #1B1B1B;
+  font-family: 'Varela Round', sans-serif;
+  background-image: url("vintage.jpg");
+  background-size: auto;
+}
+p {
+  color: #ffff;
+}
+
+.name {
+  text-align: center;
+  font-size: 28px;
+}
+
+h4 {
+  text-height: 10px;
+  text-align: center;
+  overflow: auto;
+}
+h3 {
+  text-height: 10px;
+  text-align: center;
+  overflow: auto;
+}
+button {
+  background-color:#1B1B1B;
+  color:white;
+  font-family: 'Varela Round', sans-serif;
+}
+button:hover {
+  background-color:white;
+  color:#1B1B1B;
+  font-family: 'Varela Round', sans-serif;
+}
+
+input {
+  background-color:#1B1B1B;
+  font-family: 'Varela Round', sans-serif;
+  color:white;
+  text-align:center;
+}
+select {
+  background-color:#1B1B1B;
+  font-family: 'Varela Round', sans-serif;
+  color:white;
+  text-align:center;
+}
+
+input:focus {
+  background-color:white;
+  color:#1B1B1B;
+}

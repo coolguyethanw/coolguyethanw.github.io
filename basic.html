@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Varela+Round" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <table width="100%" height="1%">
+      <tr>
+        <th width="25%"><img src="logo2.png" width="12%" height="97%" class="logo"> </th>
+        <!--<th width="25%"><a href="index.html" class="home">Home</a></th>
+    <th width="25%"><a href="room.html" class="blog">Rooms</a></th>
+    <th width="25%"><a href="about.html" class="contact">About</a></th> -->
+      </tr>
+    </table>
+  </div>
+  <div id="room1">
+    <h1 id="fooditem1"></h1>
+    <p id="desc"></p>
+    <img src="fishchips.png" id="fishchips">
+    <button onclick="CleanRoom1()" id="buttonC1">Sold out</button><button onclick="OpenRoom1()" id="buttonO1">Unsold Out</button>
+    <div id="alert">
+      <p id="statusbar1"></p>
+    </div>
+    <!--<select id="Room1Kicker">
+      <option value="0">food 1</option>
+      <option value="1">food 2</option>
+      <option value="2">food 3</option>
+      <option value="3">food 4</option>
+    </select>
+  -->
+    <button onclick="removeRoom1()">Remove food</button>
+  </div>
+  <div id="room2">
+  </div>
+  <div id="room3">
+  <div id="room4">
+  </div>
+  <div id="room5">
+  </div>
+  <div id="room6">
+  </div>
+  <div id="room7">
+  </div>
+  <div id="room8">
+  </div>
+
+
+  <div id="logger">
+    <h3>Hotel Log</h3>
+    <ul id="logs"></ul>
+  </div>
+  <!-- comments pertaining to HTML will by in js because html comments
+are painful to use -->
+
+  <script src="main.js">// script is in file</script>
+  <!-- script is to be the LAST thing in the body -->
+</body>
+
+</html>
