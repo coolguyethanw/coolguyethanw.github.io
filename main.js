@@ -172,7 +172,7 @@ function addfoodrm1() {
   var ul = document.getElementById("GRoom1");
   // find the list inside the room
   // add an ID to the list items so we can identify and remove it later
-  var newText = document.createTextNode(food);
+  var newText = document.createTextNode(food + " " Menu1Price);
   document.body.appendChild(Newli);
   ul.appendChild(Newli);
   Newli.appendChild(newText);
@@ -240,7 +240,7 @@ function removeRoom1() {
   ConsoleLog();
   // logging section
   //  document.getElementById("foodName1").value = "";
-  if (NumfoodsRm1 >= 5) {
+ /* if (NumfoodsRm1 >= 5) {
     document.getElementById('statusbar1').innerHTML = "This ain't an all you-can-eat buffet";
     // tell other funcs that room is full
     Room1Full = true;
@@ -257,6 +257,7 @@ function removeRoom1() {
   }
 
 }
+*/
 
 function OpenRoom1() {
   RoomClean1 = false;
@@ -301,7 +302,7 @@ function clearRoom1() {
     var ul = document.getElementById("GRoom1");
     // find the list inside the room
     // add an ID to the list items so we can identify and remove it later
-    var newText = document.createTextNode(food);
+    var newText = document.createTextNode(food + " " Menu1Price);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
     Newli.appendChild(newText);
