@@ -10,6 +10,65 @@ xmlhttp.onreadystatechange = function() {
 if(this.readyState == 4 && this.status == 200){
 var mydata = JSON.parse(this.responseText);
 window.alert(mydata.menu[1].name);
+Menu1Name = mydata.menu[0].name;
+$.getElementById("fooditem1") = Menu1Name;
+ Menu1Price = mydata.menu[0].price;
+$.getElementById("foodPrice1") = Menu1Price;
+ Menu1Desc = mydata.menu[0].desc;
+$.getElementById("foodDesc1") = Menu1Desc;
+//// inserting menu items
+ Menu2Name = mydata.menu[1].name;
+$.getElementById("fooditem2") = Menu2Name;
+ Menu2Price = mydata.menu[1].price;
+$.getElementById("foodPrice2") = Menu2Price;
+ Menu2Desc = mydata.menu[1].desc;
+$.getElementById("foodDesc2") = Menu2Desc;
+
+ Menu3Name = mydata.menu[2].name;
+$.getElementById("fooditem3") = Menu3Name;
+ Menu3Price = mydata.menu[2].price;
+$.getElementById("foodPrice3") = Menu3Price;
+ Menu3Desc = mydata.menu[2].desc;
+$.getElementById("foodDesc3") = Menu3Desc;
+
+ Menu4Name = mydata.menu[3].name;
+$.getElementById("fooditem4") = Menu4Name;
+ Menu4Price = mydata.menu[3].price;
+$.getElementById("foodPrice4") = Menu4Price;
+ Menu4Desc = mydata.menu[3].desc;
+$.getElementById("foodDesc4") = Menu4Desc;
+
+ Menu5Name = mydata.menu[4].name;
+$.getElementById("fooditem5") = Menu5Name;
+ Menu5Price = mydata.menu[4].price;
+$.getElementById("foodPrice5") = Menu5Price;
+ Menu5Desc = mydata.menu[4].desc;
+$.getElementById("foodDesc5") = Menu5Desc;
+
+
+ Menu6Name = mydata.menu[5].name;
+$.getElementById("fooditem6") = Menu6Name;
+ Menu6Price = mydata.menu[5].price;
+$.getElementById("foodPrice6") = Menu6Price;
+ Menu6Desc = mydata.menu[5].desc;
+$.getElementById("foodDesc6") = Menu6Desc;
+
+
+ Menu7Name = mydata.menu[6].name;
+$.getElementById("fooditem7") = Menu7Name;
+ Menu7Price = mydata.menu[6].price;
+$.getElementById("foodPrice7") = Menu7Price;
+ Menu7Desc = mydata.menu[6].desc;
+$.getElementById("foodDesc7") = Menu7Desc;
+
+
+ Menu8Name = mydata.menu[7].name;
+$.getElementById("fooditem8") = Menu8Name;
+ Menu8Price = mydata.menu[7].price;
+$.getElementById("foodPrice8") = Menu8Price;
+ Menu8Desc = mydata.menu[7].desc;
+$.getElementById("foodDesc8") = Menu8Desc;
+
 }
 };
 
@@ -75,64 +134,64 @@ var Room7Full = false;
 var Room8Full = true; //starts true for testing and because ice cream machine broke
 
 // ============= loading in the json items as variables and then inserting in page
-var Menu1Name = mydata.menu[0].name;
+ Menu1Name = mydata.menu[0].name;
 $.getElementById("fooditem1") = Menu1Name;
-var Menu1Price = mydata.menu[0].price;
+ Menu1Price = mydata.menu[0].price;
 $.getElementById("foodPrice1") = Menu1Price;
-var Menu1Desc = mydata.menu[0].desc;
+ Menu1Desc = mydata.menu[0].desc;
 $.getElementById("foodDesc1") = Menu1Desc;
 //// TODO: finish this shit with the descriptions
 
-var Menu2Name = mydata.menu[1].name;
+ Menu2Name = mydata.menu[1].name;
 $.getElementById("fooditem2") = Menu2Name;
-var Menu2Price = mydata.menu[1].price;
+ Menu2Price = mydata.menu[1].price;
 $.getElementById("foodPrice2") = Menu2Price;
-var Menu2Desc = mydata.menu[1].desc;
+ Menu2Desc = mydata.menu[1].desc;
 $.getElementById("foodDesc2") = Menu2Desc;
 
-var Menu3Name = mydata.menu[2].name;
+ Menu3Name = mydata.menu[2].name;
 $.getElementById("fooditem3") = Menu3Name;
-var Menu3Price = mydata.menu[2].price;
+ Menu3Price = mydata.menu[2].price;
 $.getElementById("foodPrice3") = Menu3Price;
-var Menu3Desc = mydata.menu[2].desc;
+ Menu3Desc = mydata.menu[2].desc;
 $.getElementById("foodDesc3") = Menu3Desc;
 
-var Menu4Name = mydata.menu[3].name;
+ Menu4Name = mydata.menu[3].name;
 $.getElementById("fooditem4") = Menu4Name;
-var Menu4Price = mydata.menu[3].price;
+ Menu4Price = mydata.menu[3].price;
 $.getElementById("foodPrice4") = Menu4Price;
-var Menu4Desc = mydata.menu[3].desc;
+ Menu4Desc = mydata.menu[3].desc;
 $.getElementById("foodDesc4") = Menu4Desc;
 
-var Menu5Name = mydata.menu[4].name;
+ Menu5Name = mydata.menu[4].name;
 $.getElementById("fooditem5") = Menu5Name;
-var Menu5Price = mydata.menu[4].price;
+ Menu5Price = mydata.menu[4].price;
 $.getElementById("foodPrice5") = Menu5Price;
-var Menu5Desc = mydata.menu[4].desc;
+ Menu5Desc = mydata.menu[4].desc;
 $.getElementById("foodDesc5") = Menu5Desc;
 
 
-var Menu6Name = mydata.menu[5].name;
+ Menu6Name = mydata.menu[5].name;
 $.getElementById("fooditem6") = Menu6Name;
-var Menu6Price = mydata.menu[5].price;
+ Menu6Price = mydata.menu[5].price;
 $.getElementById("foodPrice6") = Menu6Price;
-var Menu6Desc = mydata.menu[5].desc;
+ Menu6Desc = mydata.menu[5].desc;
 $.getElementById("foodDesc6") = Menu6Desc;
 
 
-var Menu7Name = mydata.menu[6].name;
+ Menu7Name = mydata.menu[6].name;
 $.getElementById("fooditem7") = Menu7Name;
-var Menu7Price = mydata.menu[6].price;
+ Menu7Price = mydata.menu[6].price;
 $.getElementById("foodPrice7") = Menu7Price;
-var Menu7Desc = mydata.menu[6].desc;
+ Menu7Desc = mydata.menu[6].desc;
 $.getElementById("foodDesc7") = Menu7Desc;
 
 
-var Menu8Name = mydata.menu[7].name;
+ Menu8Name = mydata.menu[7].name;
 $.getElementById("fooditem8") = Menu8Name;
-var Menu8Price = mydata.menu[7].price;
+ Menu8Price = mydata.menu[7].price;
 $.getElementById("foodPrice8") = Menu8Price;
-var Menu8Desc = mydata.menu[7].desc;
+ Menu8Desc = mydata.menu[7].desc;
 $.getElementById("foodDesc8") = Menu8Desc;
 
 
