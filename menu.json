@@ -1,6 +1,6 @@
 {
   "menu": [{
-      "name": "Fish n' Sticks",
+      "name": "Fish n' Chips",
       "price": 12,
       "desc": "Fresh caught fish from the ala wai! Comes with fries!"
 
@@ -14,9 +14,9 @@
 
     },
     {
-      "name": "Salad",
-      "price": 4,
-      "desc": "On a diet? This will be a great choice for you!"
+      "name": "Fried chicken",
+      "price": 8,
+      "desc": "Fresh Chicken deep fried to perfection,comes with mac salad,2 scoops of rice and buttered corn"
 
 
     }, {
@@ -39,7 +39,7 @@
 
 
     }, {
-      "name": "Mega Donker",
+      "name": "Mega Donk Burger",
       "price": 14,
       "desc": "Our world-famous singature burger, made with our super secret recipe."
 

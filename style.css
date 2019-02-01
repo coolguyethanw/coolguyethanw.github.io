@@ -29,10 +29,6 @@
 }
 
 
-/*apprently you cant have classes and ids together without messing up the script
-for fucks sake this is a long ass file due to 50% of it being button styles
-for every button in every goddam room*/
-
 .navbar {
   background-color: #ffffff;
   position: fixed;
@@ -101,9 +97,6 @@ div {
   overflow: auto;
   float:right;
   position:relative;
-  border-radius: 50px;
-  border-style: double;
-  border-width: 15px;
     margin-top: 9vh;
   margin-left: 1.35vw;
   margin-bottom: 1.5vh;
@@ -324,4 +317,11 @@ select {
 input:focus {
   background-color:white;
   color:#1B1B1B;
+}
+#foodone {
+  width:15vw;
+  height:10vw;
+}
+#foodone:onclick {
+  background-color:red;
 }
