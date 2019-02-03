@@ -2,7 +2,7 @@
   "menu": [{
       "name": "Fish n' Chips",
       "price": 12,
-      "desc": "Fresh caught fish from the ala wai! Comes with fries!"
+      "desc": "Fresh caught fish from the ala wai! Comes with fresh fries! A classiv british platter."
 
 
     },
@@ -27,9 +27,9 @@
 
 
     }, {
-      "name": "Spaghetti",
+      "name": "Bentote box",
       "price": 12,
-      "desc": "Simple Spghetti with beef meatballs,A classic dish that is served by our italian chefs, comes with soup of the day."
+      "desc": "Classic seafood box,comes with sushi rolls.(WARNING: raw and undercooked foods may cause harm)"
 
 
     }, {
@@ -41,7 +41,7 @@
     }, {
       "name": "Mega Donk Burger",
       "price": 14,
-      "desc": "Our world-famous singature burger, made with our super secret recipe."
+      "desc": "Our world-famous singature burger, made with our mystery meat, a top secret recipe."
 
 
     },
