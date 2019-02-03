@@ -11,7 +11,7 @@ if(this.readyState == 4 && this.status == 200){
 var mydata = JSON.parse(this.responseText);
 window.alert(mydata.menu[1].name);
 Menu1Name = mydata.menu[0].name;
-$.getElementById("fooditem1") = Menu1Name;
+document.getElementById("fooditem1") = Menu1Name;
  Menu1Price = mydata.menu[0].price;
 $.getElementById("foodPrice1") = Menu1Price;
  Menu1Desc = mydata.menu[0].desc;
@@ -158,7 +158,7 @@ var RoomClean8 = false;
 var RoomClean1 = false;
 // list of check in foods
 function addfoodrm1() {
-  var food = Menu1Name
+  var food = Menu1Name;
   NumfoodsRm1 += 1;
   //foodsRm1.push(food);
   // add food name to food list
@@ -289,7 +289,7 @@ function clearRoom1() {
       // TODO: find a way to stop people from overflowing the room effectively
     }
       // TODO: find a way to stop people from overflowing the room effectively
-    var food = Menu1Name
+    var food = Menu1Name;
     foodsRm1.push(food);
     // add food name to food list
     var room = document.getElementById("GRoom1");
@@ -301,7 +301,7 @@ function clearRoom1() {
     var ul = document.getElementById("GRoom1");
     // find the list inside the room
     // add an ID to the list items so we can identify and remove it later
-    var newText = document.createTextNode(food + " " Menu1Price);
+    var newText = document.createTextNode(food + " " + Menu1Price);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
     Newli.appendChild(newText);
@@ -348,4 +348,5 @@ function ConsoleLog() {
   document.body.appendChild(Newli);
   ul.appendChild(Newli);
   Newli.appendChild(newText);
+}
 }
