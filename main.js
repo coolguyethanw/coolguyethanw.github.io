@@ -172,7 +172,7 @@ function addfoodrm1() {
   var ul = document.getElementById("GRoom1");
   // find the list inside the room
   // add an ID to the list items so we can identify and remove it later
-  var newText = document.createTextNode(food + " " Menu1Price);
+  var newText = document.createTextNode(food + " " + Menu1Price);
   document.body.appendChild(Newli);
   ul.appendChild(Newli);
   Newli.appendChild(newText);
@@ -255,7 +255,6 @@ function removeRoom1() {
     document.getElementById('button1', 'foodName1').disabled = false;
     Room1Full = false;
   }
-
 }
 */
 
