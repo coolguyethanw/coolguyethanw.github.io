@@ -11,7 +11,8 @@ if(this.readyState == 4 && this.status == 200){
 var mydata = JSON.parse(this.responseText);
 window.alert(mydata.menu[1].name);
 Menu1Name = mydata.menu[0].name;
- Menu1Price = mydata.menu[0].price;
+Menu1Price = mydata.menu[0].price;
+ $.getElementById("fooditem1") = Menu1Name;
 $.getElementById("foodPrice1") = Menu1Price;
  Menu1Desc = mydata.menu[0].desc;
 $.getElementById("foodDesc1") = Menu1Desc;
@@ -67,7 +68,6 @@ $.getElementById("fooditem8") = Menu8Name;
 $.getElementById("foodPrice8") = Menu8Price;
  Menu8Desc = mydata.menu[7].desc;
 $.getElementById("foodDesc8") = Menu8Desc;
-
 }
 };
 
