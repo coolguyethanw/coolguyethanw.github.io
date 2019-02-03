@@ -11,7 +11,6 @@ if(this.readyState == 4 && this.status == 200){
 var mydata = JSON.parse(this.responseText);
 window.alert(mydata.menu[1].name);
 Menu1Name = mydata.menu[0].name;
-document.getElementById("fooditem1") = Menu1Name;
  Menu1Price = mydata.menu[0].price;
 $.getElementById("foodPrice1") = Menu1Price;
  Menu1Desc = mydata.menu[0].desc;
