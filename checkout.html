@@ -37,15 +37,10 @@
   var Menu6Price = sessionStorage.getItem("Price6");
   var totalItems = sessionStorage.getItem("totalorder");
   var subtotal = sessionStorage.getItem("total");
-  var grandtotal = Menu1Price * NumfoodsRm11;
-  Menu2Price * NumfoodsRm22 + grandtotal;
-  Menu3Price * NumfoodsRm33 + grandtotal;
-  Menu4Price * NumfoodsRm44 + grandtotal;
-  Menu5Price * NumfoodsRm55 + grandtotal;
-  Menu6Price * NumfoodsRm66 + grandtotal;
-  document.getElementById('total').innerHTML = grandtotal;
-  var grandesttotal = grandtotal * tax;
-  document.getElementById('Gtotal').innerHTML = grandesttotal;
+  var gtotal = sessionStorage.getItem("total2");
+  window.alert(Menu6Price)
+  document.getElementById('total').innerHTML = gtotal;
+  document.getElementById('Gtotal').innerHTML = gtotal;
   }
   init()
 
@@ -181,7 +176,7 @@
     </table>
     <select id="Disposal">
     </select>
-    <script>sessionStorage.clear();</script>
+    <script></script>
     <button onclick="removeRoom1()">Remove Item</button>
   </div>
 </body>

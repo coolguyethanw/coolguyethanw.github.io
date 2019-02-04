@@ -3,6 +3,8 @@
 // json stuff
 // json initilization below
 // todo: CLEAN THIS UP!!
+var subtotal = 0;
+var total = 0;
 var tax = 0.004712;
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -106,7 +108,8 @@ setInternal(function(){
 // optionboxes are things like ice cream that have pickable flavors
 // room 4 and 8 are optionboxes which have select boxes for flavors
 // todo: comment out b4 turning in
-var foodsRm1 = [];
+var foodsTotal = [];
+var foodsRm = [];
 var foodsRm2 = [];
 var foodsRm3 = [];
 var foodsRm4 = [];
@@ -193,7 +196,10 @@ function removeRoom1() {
   console.log("Kicking food from room 1, may create errors if no food found!");
   gtfo.removeChild(kick);
   d = new Date();
-  subtotal -= 12;
+  subtotal -= commandprice;
+  document.getElementById("total").innerHTML = "$" + subtotal;
+  total2 -= commandprice;
+  document.getElementById('total2').innerHTML = "$" + total;
 }
 
 function clearRoom1() {
@@ -206,10 +212,10 @@ function clearRoom1() {
     // TODO: find a way to stop people from overflowing the room effectively
     totalItems += 1;
     var food = Menu1Name;
-    foodsRm1.push(food);
     command = food;
     commandprice = Menu1Price;
     ConsoleLog()
+    foodsTotal.push(food);
     var Newli = document.createElement('option');
     // create new element and save it as new li
     var ul = document.getElementById("Disposal");
@@ -407,11 +413,15 @@ function ConsoleLog() {
   Newli.appendChild(newPrice);
   totalcalc()
 }
-var subtotal = 0;
 
 function totalcalc() {
   subtotal = commandprice + subtotal;
   document.getElementById("total").innerHTML = "$" + subtotal;
+  var total = subtotal + tax;
+  var taxes = tax * total;
+  total = total + taxes;
+  var gtotal = total.toFixed(2);
+  document.getElementById('total2').innerHTML = "$" + gtotal;
 }
 
 function paymentpage() {
@@ -423,6 +433,7 @@ function paymentpage() {
   sessionStorage.setItem('food6', 'NumfoodsRm6');
   sessionStorage.setItem('totalorder', 'totalItems');
   sessionStorage.setItem('total', 'subtotal');
+  sessionStorage.setItem('total2', 'gtotal');
   location = "checkout.html";
 }
 

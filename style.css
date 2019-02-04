@@ -41,7 +41,7 @@ for every button in every goddam room*/
   margin: auto;
   margin-top: -1vh;
   vertical-align: top;
-  margin-left: 0vw;
+  margin-left: -1vw;
   z-index: 1;
   animation-name: blocker;
   animation-duration: 501ms;
