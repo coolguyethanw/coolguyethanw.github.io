@@ -1,12 +1,60 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    
-  </head>
-  <body>
-    <script>
-      
-    </script>
-    
-  </body>
+
+<head>
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Varela+Round" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+  <script src="main.js"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <table width="100%">
+      <tr>
+        <th>
+          Nano<span>Cafe</span>
+        </th>
+        <td><img src="NTlogo.png" class="logo"></td>
+        <th style="">
+          Nano<span>Cafe </span>
+        </th>
+      </tr>
+    </table>
+  </div>
+
+  <div id="check">
+    <h3>Order Box</h3>
+    <table width="100%">
+      <tr width="100%">
+        <td></td>
+        <td>Order</td>
+      </tr>
+      <tr width="100%">
+        <td>
+          <ol id="logs"></ol>
+        </td>
+        <td>
+          <ol>
+            <ol id="prices"> </ol>
+        </td>
+      </tr>
+      <tr width="100%">
+        <td>
+          <h5>Total:</h5><h5 id="total">Total Amount Here</h5>
+          </ol>
+        </td>
+      </tr>
+    </table>
+    <select id="Disposal">
+    </select>
+    <button onclick="removeRoom1()">Remove Item</button>
+  </div>
+</body>
+
 </html>

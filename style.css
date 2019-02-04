@@ -29,20 +29,29 @@
 }
 
 
+/*apprently you cant have classes and ids together without messing up the script
+for fucks sake this is a long ass file due to 50% of it being button styles
+for every button in every goddam room*/
+
 .navbar {
   background-color: #ffffff;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   text-decoration: none;
   margin: auto;
-  margin-top: -.5vh;
+  margin-top: -1vh;
   vertical-align: top;
-  margin-left: -.5vw;
+  margin-left: 0vw;
   z-index: 1;
   animation-name: blocker;
   animation-duration: 501ms;
   animation-iteration-count: 1;
   align: center;
+  height:9vh;
+  text-align: center;
+  border-bottom-style:solid;
+  border-color:#092337;
+  border-width:medium;
   /*border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px; */
 }
@@ -58,17 +67,15 @@ div {
   animation-duration: 501ms;
   animation-iteration-count: 1;
 }
+ol{
+  font-size:12px;
+}
 
 .logo {
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: auto;
-  margin-top: .25vh;
+  height:8.5vh;
+  width:auto;
 }
+
 
 .home {
   background-color: rgba(0, 0, 0, 0.81);
@@ -87,127 +94,147 @@ div {
 }
 
 #logger {
-  width: 55vw;
-  height:32.5vh;
+  width: 100vw;
+  height:20vh;
   background-color: #ffffff;
-  border-color:#C5B358;
-  border-style: double;
-  border-radius: 15px;
-  border-width:15px;
-  overflow: auto;
-  float:right;
+  border-color:#092337;
+  border-top-style:solid;
+  border-bottom-style:solid;
+  border-width:3px;
+  overflow:auto;
+  display:block;
+    margin-left:-1vw;
+    padding-left:25px;
+    padding-right:25px;
   position:relative;
-    margin-top: 9vh;
-  margin-left: 1.35vw;
-  margin-bottom: 1.5vh;
+}
+#check {
+  width: 100vw;
+  height:20vh;
+  background-color: #ffffff;
+  border-color:#092337;
+  border-top-style:solid;
+  border-bottom-style:solid;
+  border-width:3px;
+  overflow:auto;
+  display:block;
+    margin-left:-1vw;
+    padding-left:25px;
+    padding-right:25px;
+  position:relative;
+  transform: translateY(+200%)
 }
 #room1 {
-  height: 32.5vh;
-  width: 15.5vw;
+  height: 31.5vh;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #1B1B1B;
+  border-color: #092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
   border-width: 15px;
   margin-top: 9vh;
   margin-left: 1.25vw;
-  margin-bottom: 0%;
+  margin-bottom: 1vh;
   padding: 12px;
   font-size: 14.5px;
   float:left;
   position:relative;
 }
 #room2 {
-  height: 32.5vh;
-  width: 15.5vw;
+  height: 31.5vh;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #1B1B1B;
+  border-color: #092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
   border-width: 15px;
   margin-top: 9vh;
-  margin-left: 1.25vw;
-  margin-bottom: 0%;
+  margin-left: 14vw;
+  margin-bottom: 1vh;
   padding: 12px;
   font-size: 14.5px;
   float:left;
   position:relative;
 }
 #room3 {
-  height: 32.5vh;
-  width: 15.5vw;
+  height: 31.5vh;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #1B1B1B;
+  border-color: #092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
   border-width: 15px;
   margin-top: 9vh;
   margin-left: 1.25vw;
-  margin-bottom: 0%;
+  margin-bottom:1vh;
   padding: 12px;
   font-size: 14.5px;
-  float:left;
+  float:right;
   position:relative;
 }
 #room4 {
-  height: 32.5vh;
-  width: 15.5vw;
+  height: 31.5vh;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #1B1B1B;
+  border-color: #092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
   border-width: 15px;
-  margin-top: 9vh;
+  margin-top: 1vh;
   margin-left: 1.25vw;
-  margin-bottom: 0%;
+  margin-bottom: 1vh;
   padding: 12px;
   position:relative;
   font-size: 14.5px;
   float:left;
 }
 #room5 {
-  height: 32.5vh;
-  width: 15.5vw;
+  height: 31.5vh;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #1B1B1B;
+  border-color:#092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
   border-width: 15px;
-  margin-top: 9vh;
-  margin-left: 1.25vw;
-  margin-bottom: 0%;
+  margin-top: 1vh;
+  margin-left: 14vw;
+  margin-bottom: 1vh;
   padding: 12px;
   font-size: 14.5px;
   position:relative;
   float:left;
 }
+td{
+  margin:auto;
+  display: inline-block;
+}
 #room6 {
-  height: 32.5vh;
-  width: 15.5vw;
+  height: 31.5vh;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #C5B358;
+  border-color: #092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
   border-width: 15px;
-  margin-top: 9vh;
+  margin-top: 1vh;
   margin-left: 1.25vw;
-  margin-bottom: 1.5vw;
+  margin-bottom: 1vh;
   padding: 12px;
   font-size: 14.5px;
   position:relative;
-  float:left;
+  float:right;
 }
 #room7 {
   height: 32.5vh;
-  width: 15.5vw;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #C5B358;
+  border-color: #092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
@@ -222,9 +249,9 @@ div {
 }
 #room8 {
   height: 32.5vh;
-  width: 15.5vw;
+  width: 20.5vw;
   background-color: #ffffff;
-  border-color: #C5B358;
+  border-color: #092337;
   /*  color: #f5f0f0; */
   border-radius: 50px;
   border-style: double;
@@ -237,14 +264,19 @@ div {
   position:relative;
   float:left;
 }
-h2{
+h2 {
   text-align:center;
 }
 img {
   margin:auto;
-  display:block;
-  border-radius:15px;
+  display: block;
+  width:14vw;
+  height:8vh;
+  align:center;
+  margin:auto;
+  position:relative;
 }
+
 
 #alert {
   background-color: red;
@@ -264,6 +296,12 @@ h1 {
   text-align: center;
   font-family: 'Berkshire Swash', cursive;
 }
+th{
+  font-size:35px;
+}
+span {
+color:#092337;
+}
 
 body {
   background-color: #1B1B1B;
@@ -272,7 +310,7 @@ body {
   background-size: auto;
 }
 p {
-  color: #ffff;
+  font-size: 15px;
 }
 
 .name {
@@ -289,9 +327,10 @@ h3 {
   text-height: 10px;
   text-align: center;
   overflow: auto;
+
 }
 button {
-  background-color:#1B1B1B;
+  background-color:#092337;
   color:white;
   font-family: 'Varela Round', sans-serif;
 }
@@ -308,7 +347,7 @@ input {
   text-align:center;
 }
 select {
-  background-color:#1B1B1B;
+  background-color:#092337;
   font-family: 'Varela Round', sans-serif;
   color:white;
   text-align:center;
@@ -318,10 +357,10 @@ input:focus {
   background-color:white;
   color:#1B1B1B;
 }
-#foodone {
-  width:15vw;
-  height:10vw;
-}
-#foodone:onclick {
-  background-color:red;
+/* food items below*/
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin:0;
+  align: center;
 }
