@@ -202,7 +202,7 @@ function clearRoom1() {
     var newText = document.createTextNode(totalItems);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
-    var trudat = totalitem -1;
+    var trudat = totalItems -1;
     Newli.setAttribute("value",trudat);
     Newli.appendChild(newText);
     NumfoodsRm1 += 1;
@@ -232,7 +232,8 @@ function clearRoom1() {
       var newText = document.createTextNode(totalItems);
       document.body.appendChild(Newli);
       ul.appendChild(Newli);
-      Newli.setAttribute("value",totalItems);
+      var trudat = totalItems-1;
+      Newli.setAttribute("value",trudat);
       Newli.appendChild(newText);
       NumfoodsRm2 += 1;
       num++
@@ -261,7 +262,8 @@ function clearRoom1() {
         var newText = document.createTextNode(totalItems);
         document.body.appendChild(Newli);
         ul.appendChild(Newli);
-        Newli.setAttribute("value",totalItems);
+        var trudat = totalItems -1;
+        Newli.setAttribute("value",trudat);
         Newli.appendChild(newText);
         NumfoodsRm3 += 1;
         num++
@@ -290,7 +292,8 @@ function clearRoom1() {
         var newText = document.createTextNode(totalItems);
         document.body.appendChild(Newli);
         ul.appendChild(Newli);
-        Newli.setAttribute("value",totalItems);
+        var trudat = totalItems -1;
+        Newli.setAttribute("value",trudat);
         Newli.appendChild(newText);
         NumfoodsRm4 += 1;
         num++
@@ -319,7 +322,8 @@ function clearRoom5() {
     var newText = document.createTextNode(totalItems);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
-    Newli.setAttribute("value",totalItems);
+    var trudat = totalItems -1;
+    Newli.setAttribute("value",trudat);
     Newli.appendChild(newText);
     NumfoodsRm5 += 1;
     num++
@@ -348,7 +352,8 @@ function clearRoom6() {
     var newText = document.createTextNode(totalItems);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
-    Newli.setAttribute("value",totalItems);
+    var trudat = totalItems -1;
+    Newli.setAttribute("value",trudat);
     Newli.appendChild(newText);
     NumfoodsRm6 += 1;
     num++
