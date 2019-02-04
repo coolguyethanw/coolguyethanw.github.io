@@ -1,7 +1,8 @@
 // script has to be last in the body
-
+// ---- this whole thing is a veritable tower of duct-tape
 // json stuff
 // json initilization below
+// todo: CLEAN THIS UP!!
 
 
 
@@ -103,6 +104,8 @@ var foodsRm7 = [];
 var foodsRm8 = [];
 // food names stored (doesn't fucking work for some reason)
 var command = "start of food log";
+// used for printing the items and then adding the price
+var commandprice = "price of food here";
 // used for logging commands
 var NumfoodsRm1 = 0;
 // fish n sticks, price 12
@@ -130,6 +133,7 @@ var Room4Full = false;
 var Room5Full = false;
 var Room6Full = false;
 var Room7Full = false;
+var totalItems = 0;
 var Room8Full = true; //starts true for testing and because ice cream machine broke
 
 // ============= loading in the json items as variables and then inserting in page
@@ -145,38 +149,33 @@ var RoomClean8 = false;
 */
 
 // main global variables above
-
-//  window.alert(d)
-//  getUTCMonth()
-//  getUTCDate()
-//  getUTCHours()
-//  getUTCMinutes()
-//  getUTCSeconds()
-
 // main script begins  below
 var RoomClean1 = false;
 // list of check in foods
 function addfoodrm1() {
   var food = Menu1Name;
   NumfoodsRm1 += 1;
+  totalItems += 1;
   //foodsRm1.push(food);
   // add food name to food list
   document.getElementById('statusbar1').innerHTML = "Enter food name!";
-  var room = document.getElementById("GRoom1");
+  /*var room = document.getElementById("logs");
   // find the room that were about to thro w foods into
   var checkIn = room.getElementsByTagName("li");
   // find the list inside the room
   var Newli = document.createElement('li');
   // create new element and save it as new li
-  var ul = document.getElementById("GRoom1");
+  var ul = document.getElementById("logs");
   // find the list inside the room
   // add an ID to the list items so we can identify and remove it later
   var newText = document.createTextNode(food + " " + Menu1Price);
   document.body.appendChild(Newli);
   ul.appendChild(Newli);
   Newli.appendChild(newText);
+  */
   d = new Date();
-  command = food + " has been checked into room 1 at " + d + "!";
+  command = food;
+  commandprice = Menu1Price;
   ConsoleLog()
 
   document.getElementById("foodName1").value = "";
@@ -198,36 +197,9 @@ function addfoodrm1() {
   }
 
 };
-/*
-function clearRoom1() {
-  var num = 1;
-  document.getElementById("foodName1").value = "";
-  foodsRm1 = [""];
-  foodsRm1.length = 0;
-  d = new Date();
-  command = "Room1 has been cleared at " + d + "!";
-  ConsoleLog()
-  while (num <= 4) {
-    // run remove code 4 times to remove all foods, will create errors
-    var badfood = document.getElementById('Room1Kicker').value = 0;
-    // make sure the value is 0 so we can remove all foods properly
-    var room = document.getElementById('room1');
-    var kick = room.getElementsByTagName('li')[badfood];
-    var gtfo = kick.parentNode;
-    NumfoodsRm1 -= 1;
-    console.log("Clearing room! (Creates errors if less than 4 foods)")
-    gtfo.removeChild(kick);
-    document.getElementById('statusbar1').innerHTML = "";
-    document.getElementById('button1', 'foodName1').disabled = false;
-    num++;
-  }
-  num = 0;
-  document.getElementById('statusbar1').innerHTML = " ";
-  document.getElementById('button1', 'foodName1').disabled = false;
-}
-*/
+
 function removeRoom1() {
-  var badfood = document.getElementById('Room1Kicker').value;
+  var badfood = document.getElementById('Disposal').value;
   var room = document.getElementById('room1');
   var kick = room.getElementsByTagName('li')[badfood];
   var gtfo = kick.parentNode;
@@ -235,7 +207,6 @@ function removeRoom1() {
   console.log("Kicking food from room 1, may create errors if no food found!");
   gtfo.removeChild(kick);
   d = new Date();
-  command = "food number " + badfood + " has been removed at " + d + "!";
   ConsoleLog();
   // logging section
   //  document.getElementById("foodName1").value = "";
@@ -256,6 +227,7 @@ function removeRoom1() {
   }
 }
 */
+}
 
 function OpenRoom1() {
   RoomClean1 = false;
@@ -273,11 +245,7 @@ function clearRoom1() {
   var room = document.getElementById('room1');
   var kick = room.getElementsByTagName('li')[badfood];
   document.getElementById("foodName1").value = "";
-  foodsRm1 = [""];
-  foodsRm1.length = 0;
   d = new Date();
-  command = "Room2 has been cleared at " + d + "!";
-  ConsoleLog()
   while (num <= badfood) {
     if (NumfoodsRm1 >= 5) {
       var food = Menu1Name;
@@ -290,8 +258,11 @@ function clearRoom1() {
       // TODO: find a way to stop people from overflowing the room effectively
     var food = Menu1Name;
     foodsRm1.push(food);
+    command = food;
+    commandprice = Menu1Price;
+    ConsoleLog()
     // add food name to food list
-    var room = document.getElementById("GRoom1");
+  /*  var room = document.getElementById("GRoom1");
     // find the room that were about to thro w foods into
     var checkIn = room.getElementsByTagName("li");
     // find the list inside the room
@@ -301,15 +272,17 @@ function clearRoom1() {
     // find the list inside the room
     // add an ID to the list items so we can identify and remove it later
     var newText = document.createTextNode(food + " " + Menu1Price);
+
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
     Newli.appendChild(newText);
+    */
     // run remove code 4 times to remove all foods, will create errors
     // make sure the value is 0 so we can remove all foods properly
-    var room = document.getElementById('room1');
-    var kick = room.getElementsByTagName('li')[badfood];
-    NumfoodsRm1 -= badfood;
-    console.log("Clearing room! (Creates errors if less than 4 foods)")
+  //  var room = document.getElementById('room1');
+//    var kick = room.getElementsByTagName('li')[badfood];
+  //  NumfoodsRm1 -= badfood;
+  //  console.log("Clearing room! (Creates errors if less than 4 foods)")
     NumfoodsRm1 += 1;
     num++
   };
@@ -341,11 +314,16 @@ function ConsoleLog() {
   var Newli = document.createElement('li');
   // create new element and save it as new li
   var ul = document.getElementById("logs");
+  var ol = document.getElementById("prices");
   // find the list inside the room
   // add an ID to the list items so we can identify and remove it later
   var newText = document.createTextNode(command);
   document.body.appendChild(Newli);
   ul.appendChild(Newli);
   Newli.appendChild(newText);
-}
+
+  var newPrice = document.createTextNode(commandprice);
+  document.body.appendChild(Newli);
+  ol.appendChild(Newli);
+  Newli.appendChild(newPrice);
 }
