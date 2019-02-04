@@ -39,9 +39,9 @@ for every button in every goddam room*/
   width: 100vw;
   text-decoration: none;
   margin: auto;
-  margin-top: -1vh;
+  margin-top: 0vh;
   vertical-align: top;
-  margin-left: -1vw;
+  margin-left: 0vw;
   z-index: 1;
   animation-name: blocker;
   animation-duration: 501ms;
@@ -66,6 +66,7 @@ div {
   animation-name: makingitlooknice;
   animation-duration: 501ms;
   animation-iteration-count: 1;
+  overflow:auto;
 }
 ol{
   font-size:12px;
@@ -271,7 +272,7 @@ img {
   margin:auto;
   display: block;
   width:14vw;
-  height:11vh;
+  height:10.5vh;
   align:center;
   margin:auto;
   position:relative;
