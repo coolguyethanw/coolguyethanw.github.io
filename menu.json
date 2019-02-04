@@ -16,13 +16,13 @@
     {
       "name": "Fried chicken",
       "price": 8.00,
-      "desc": "Fresh Chicken deep fried to perfection,comes with rice"
+      "desc": "Fresh Chicken deep fried to perfectioncomes with ,rice,corn and soup of the day"
 
 
     }, {
       "name": "Bentote box",
       "price": 12.00,
-      "desc": "Classic onolicious seafood box.(WARNING: raw and undercooked foods may cause harm)"
+      "desc": "Classic onolicious seafood box,comes with spicy ahi and california rolls.(WARNING:contains raw and undercooked foods)"
 
 
     }, {

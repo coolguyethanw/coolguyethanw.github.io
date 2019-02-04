@@ -8,12 +8,137 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
-  <script src="main.js"></script>
   <style>
   </style>
 </head>
 
 <body>
+  <script>
+  var command2
+  function init(){
+  var command2
+  var NumfoodsRm11 = sessionStorage.getItem("food1");
+  var NumfoodsRm22 = sessionStorage.getItem("food2");
+  var NumfoodsRm33 = sessionStorage.getItem("food3");
+  var NumfoodsRm44 = sessionStorage.getItem("food4");
+  var NumfoodsRm55 = sessionStorage.getItem("food5");
+  var NumfoodsRm66 = sessionStorage.getItem("food6");
+  var Menu1Name = sessionStorage.getItem("Name1");
+  var Menu1Price = sessionStorage.getItem("Price1");
+  var Menu2Name = sessionStorage.getItem("Name2");
+  var Menu2Price = sessionStorage.getItem("Price2");
+  var Menu3Name = sessionStorage.getItem("Name3");
+  var Menu3Price = sessionStorage.getItem("Price3");
+  var Menu4Name = sessionStorage.getItem("Name4");
+  var Menu4Price = sessionStorage.getItem("Price4");
+  var Menu5Name = sessionStorage.getItem("Name5");
+  var Menu5Price = sessionStorage.getItem("Price5");
+  var Menu6Name = sessionStorage.getItem("Name6");
+  var Menu6Price = sessionStorage.getItem("Price6");
+  var totalItems = sessionStorage.getItem("totalorder");
+  var subtotal = sessionStorage.getItem("total");
+  var grandtotal = Menu1Price * NumfoodsRm11;
+  Menu2Price * NumfoodsRm22 + grandtotal;
+  Menu3Price * NumfoodsRm33 + grandtotal;
+  Menu4Price * NumfoodsRm44 + grandtotal;
+  Menu5Price * NumfoodsRm55 + grandtotal;
+  Menu6Price * NumfoodsRm66 + grandtotal;
+  document.getElementById('total').innerHTML = grandtotal;
+  var grandesttotal = grandtotal * tax;
+  document.getElementById('Gtotal').innerHTML = grandesttotal;
+  }
+  init()
+
+  function order1(){
+    num = 1;
+    while (num <= NumfooodsRm11){
+      totalItems += 1;
+      var food = Menu1Name;
+      foodsRm1.push(food);
+      command2 = food;
+      ConsoleLog2()
+    }
+    num = 0;
+  }
+  order1()
+  function order2(){
+    num = 1;
+    while (num <= NumfoodsRm22){
+      totalItems += 1;
+      var food = Menu2Name;
+      foodsRm1.push(food);
+      command2 = food;
+      ConsoleLog2()
+    }
+    num = 0;
+  }
+  order2()
+  function order3(){
+    num = 1;
+    while (num <= NumfoodsRm33){
+      totalItems += 1;
+      var food = Menu3Name;
+      foodsRm1.push(food);
+      command2 = food;
+      ConsoleLog2()
+    }
+    num = 0;
+  }
+  order3()
+  function order4(){
+    num = 1;
+    while (num <= NumfoodsRm44){
+      totalItems += 1;
+      var food = Menu4Name;
+      foodsRm1.push(food);
+      command2 = food;
+      ConsoleLog2()
+    }
+    num = 0;
+  }
+  order4()
+  function order5(){
+    num = 1;
+    while (num <= NumfoodsRm55){
+      totalItems += 1;
+      var food = Menu5Name;
+      foodsRm1.push(food);
+      command2 = food;
+      ConsoleLog2()
+    }
+    num = 0;
+  }
+  order5()
+  function order6(){
+    num = 1;
+    while (num <= NumfoodsRm66){
+      totalItems += 1;
+      var food = Menu6Name;
+      foodsRm1.push(food);
+      command2 = food;
+      ConsoleLog2()
+    }
+    num = 0;
+  }
+  order6()
+  function ConsoleLog2() {
+    // add food name to food list
+    var log = document.getElementById("logger");
+    // find the room that were about to thro w foods into
+    var checkIn = log.getElementsByTagName("li");
+    // find the list inside the room
+    var Newli = document.createElement('li');
+    // create new element and save it as new li
+    var ul = document.getElementById("logs");
+    var ol = document.getElementById("prices");
+    // find the list inside the room
+    // add an ID to the list items so we can identify and remove it later
+    var newText = document.createTextNode(command2);
+    document.body.appendChild(Newli);
+    ul.appendChild(Newli);
+    Newli.appendChild(newText);
+  }
+  </script>
   <div class="navbar">
     <table width="100%">
       <tr>
@@ -41,18 +166,22 @@
         </td>
         <td>
           <ol>
-            <ol id="prices"> </ol>
+            <ol id="Orders"> </ol>
         </td>
       </tr>
       <tr width="100%">
         <td>
-          <h5>Total:</h5><h5 id="total">Total Amount Here</h5>
+          <h5>SubTotal:</h5>
+          <h5 id="total">Total Amount Here</h5>
+          <h5>GrandTotal (+taxes):</h5>
+          <h5 id="Gtotal">Total Amount Here</h5>
           </ol>
         </td>
       </tr>
     </table>
     <select id="Disposal">
     </select>
+    <script>sessionStorage.clear();</script>
     <button onclick="removeRoom1()">Remove Item</button>
   </div>
 </body>

@@ -6,71 +6,85 @@
 var tax = 0.004712;
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
-if(this.readyState == 4 && this.status == 200){
-var mydata = JSON.parse(this.responseText);
-console.log(mydata.menu[1].name);
-Menu1Name = mydata.menu[0].name;
-Menu1Price = mydata.menu[0].price;
-document.getElementById("fooditem1").innerHTML = Menu1Name;
-document.getElementById("foodPrice1").innerHTML = "$" + Menu1Price;
- Menu1Desc = mydata.menu[0].desc;
-document.getElementById("foodDesc1").innerHTML = Menu1Desc;
-//// inserting menu items
- Menu2Name = mydata.menu[1].name;
-document.getElementById("fooditem2").innerHTML = Menu2Name;
- Menu2Price = mydata.menu[1].price;
-document.getElementById("foodPrice2").innerHTML = "$" + Menu2Price;
- Menu2Desc = mydata.menu[1].desc;
-document.getElementById("foodDesc2").innerHTML = Menu2Desc;
+  if (this.readyState == 4 && this.status == 200) {
+    var mydata = JSON.parse(this.responseText);
+    console.log(mydata.menu[1].name);
+    Menu1Name = mydata.menu[0].name;
+    Menu1Price = mydata.menu[0].price;
+    document.getElementById("fooditem1").innerHTML = Menu1Name;
+    sessionStorage.setItem('Name1', 'Menu1Name');
+    sessionStorage.setItem('Price1', 'Menu1Price');
 
- Menu3Name = mydata.menu[2].name;
-document.getElementById("fooditem3").innerHTML = Menu3Name;
- Menu3Price = mydata.menu[2].price;
-document.getElementById("foodPrice3").innerHTML = "$" + Menu3Price;
- Menu3Desc = mydata.menu[2].desc;
-document.getElementById("foodDesc3").innerHTML = Menu3Desc;
+    document.getElementById("foodPrice1").innerHTML = "$" + Menu1Price;
+    Menu1Desc = mydata.menu[0].desc;
+    document.getElementById("foodDesc1").innerHTML = Menu1Desc;
+    //// inserting menu items
+    Menu2Name = mydata.menu[1].name;
+    document.getElementById("fooditem2").innerHTML = Menu2Name;
+    Menu2Price = mydata.menu[1].price;
+    document.getElementById("foodPrice2").innerHTML = "$" + Menu2Price;
+    Menu2Desc = mydata.menu[1].desc;
+    document.getElementById("foodDesc2").innerHTML = Menu2Desc;
+    sessionStorage.setItem('Name2', 'Menu2Name');
+    sessionStorage.setItem('Price2', 'Menu2Price');
 
- Menu4Name = mydata.menu[3].name;
-document.getElementById("fooditem4").innerHTML = Menu4Name;
- Menu4Price = mydata.menu[3].price;
-document.getElementById("foodPrice4").innerHTML = "$" + Menu4Price;
- Menu4Desc = mydata.menu[3].desc;
-document.getElementById("foodDesc4").innerHTML = Menu4Desc;
+    Menu3Name = mydata.menu[2].name;
+    document.getElementById("fooditem3").innerHTML = Menu3Name;
+    Menu3Price = mydata.menu[2].price;
+    document.getElementById("foodPrice3").innerHTML = "$" + Menu3Price;
+    Menu3Desc = mydata.menu[2].desc;
+    document.getElementById("foodDesc3").innerHTML = Menu3Desc;
+    sessionStorage.setItem('Name3', 'Menu3Name');
+    sessionStorage.setItem('Price3', 'Menu3Price');
 
- Menu5Name = mydata.menu[4].name;
-document.getElementById("fooditem5").innerHTML = Menu5Name;
- Menu5Price = mydata.menu[4].price;
-document.getElementById("foodPrice5").innerHTML = "$" + Menu5Price;
- Menu5Desc = mydata.menu[4].desc;
-document.getElementById("foodDesc5").innerHTML = Menu5Desc;
-
-
- Menu6Name = mydata.menu[5].name;
-document.getElementById("fooditem6").innerHTML = Menu6Name;
- Menu6Price = mydata.menu[5].price;
-document.getElementById("foodPrice6").innerHTML = "$" + Menu6Price;
- Menu6Desc = mydata.menu[5].desc;
-document.getElementById("foodDesc6").innerHTML = Menu6Desc;
+    Menu4Name = mydata.menu[3].name;
+    document.getElementById("fooditem4").innerHTML = Menu4Name;
+    Menu4Price = mydata.menu[3].price;
+    document.getElementById("foodPrice4").innerHTML = "$" + Menu4Price;
+    Menu4Desc = mydata.menu[3].desc;
+    document.getElementById("foodDesc4").innerHTML = Menu4Desc;
+    sessionStorage.setItem('Name4', 'Menu4Name');
+    sessionStorage.setItem('Price4', 'Menu4Price');
 
 
- Menu7Name = mydata.menu[6].name;
-document.getElementById("fooditem7").innerHTML = Menu7Name;
- Menu7Price = mydata.menu[6].price;
-document.getElementById("foodPrice7").innerHTML = "$" + Menu7Price;
- Menu7Desc = mydata.menu[6].desc;
-document.getElementById("foodDesc7").innerHTML = Menu7Desc;
+    Menu5Name = mydata.menu[4].name;
+    document.getElementById("fooditem5").innerHTML = Menu5Name;
+    Menu5Price = mydata.menu[4].price;
+    document.getElementById("foodPrice5").innerHTML = "$" + Menu5Price;
+    Menu5Desc = mydata.menu[4].desc;
+    document.getElementById("foodDesc5").innerHTML = Menu5Desc;
+    sessionStorage.setItem('Name5', 'Menu5Name');
+    sessionStorage.setItem('Price5', 'Menu5Price');
 
 
- Menu8Name = mydata.menu[7].name;
-document.getElementById("fooditem8").innerHTML = Menu8Name;
- Menu8Price = mydata.menu[7].price;
-document.getElementById("foodPrice8").innerHTML ="$" +  Menu8Price;
- Menu8Desc = mydata.menu[7].desc;
-document.getElementById("foodDesc8").innerHTML = Menu8Desc;
-}
+    Menu6Name = mydata.menu[5].name;
+    document.getElementById("fooditem6").innerHTML = Menu6Name;
+    Menu6Price = mydata.menu[5].price;
+    document.getElementById("foodPrice6").innerHTML = "$" + Menu6Price;
+    Menu6Desc = mydata.menu[5].desc;
+    document.getElementById("foodDesc6").innerHTML = Menu6Desc;
+    sessionStorage.setItem('Name6', 'Menu6Name');
+    sessionStorage.setItem('Price6', 'Menu6Price');
+
+
+    Menu7Name = mydata.menu[6].name;
+    document.getElementById("fooditem7").innerHTML = Menu7Name;
+    Menu7Price = mydata.menu[6].price;
+    document.getElementById("foodPrice7").innerHTML = "$" + Menu7Price;
+    Menu7Desc = mydata.menu[6].desc;
+    document.getElementById("foodDesc7").innerHTML = Menu7Desc;
+
+
+    Menu8Name = mydata.menu[7].name;
+    document.getElementById("fooditem8").innerHTML = Menu8Name;
+    Menu8Price = mydata.menu[7].price;
+    document.getElementById("foodPrice8").innerHTML = "$" + Menu8Price;
+    Menu8Desc = mydata.menu[7].desc;
+    document.getElementById("foodDesc8").innerHTML = Menu8Desc;
+  }
 };
 
-xmlhttp.open("GET","menu.json",true);
+xmlhttp.open("GET", "menu.json", true);
 xmlhttp.send();
 console.log("JSON Operation completed");
 /*
@@ -179,7 +193,9 @@ function removeRoom1() {
   console.log("Kicking food from room 1, may create errors if no food found!");
   gtfo.removeChild(kick);
   d = new Date();
+  subtotal -= 12;
 }
+
 function clearRoom1() {
   var num = 1;
   var badfood = document.getElementById('Room1Kicker').value;
@@ -187,8 +203,8 @@ function clearRoom1() {
   var kick = room.getElementsByTagName('li')[badfood];
   d = new Date();
   while (num <= badfood) {
-      // TODO: find a way to stop people from overflowing the room effectively
-      totalItems += 1;
+    // TODO: find a way to stop people from overflowing the room effectively
+    totalItems += 1;
     var food = Menu1Name;
     foodsRm1.push(food);
     command = food;
@@ -202,104 +218,108 @@ function clearRoom1() {
     var newText = document.createTextNode(totalItems);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
-    var trudat = totalItems -1;
-    Newli.setAttribute("value",trudat);
+    var trudat = totalItems - 1;
+    Newli.setAttribute("value", trudat);
     Newli.appendChild(newText);
     NumfoodsRm1 += 1;
     num++
   };
   num = 0;
 };
-  function clearRoom2() {
-    var num = 1;
-    var badfood = document.getElementById('Room2Kicker').value;
-    var room = document.getElementById('room2');
-    var kick = room.getElementsByTagName('li')[badfood];
-    d = new Date();
-    while (num <= badfood) {
-        // TODO: find a way to stop people from overflowing the room effectively
-        totalItems += 1;
-      var food = Menu2Name;
-      foodsRm2.push(food);
-      command = food;
-      commandprice = Menu2Price;
-      ConsoleLog()
-      var Newli = document.createElement('option');
-      // create new element and save it as new li
-      var ul = document.getElementById("Disposal");
-      // find the list inside the room
-      // add an ID to the list items so we can identify and remove it later
-      var newText = document.createTextNode(totalItems);
-      document.body.appendChild(Newli);
-      ul.appendChild(Newli);
-      var trudat = totalItems-1;
-      Newli.setAttribute("value",trudat);
-      Newli.appendChild(newText);
-      NumfoodsRm2 += 1;
-      num++
-    };
-    num = 0;
-  }
-    function clearRoom3() {
-      var num = 1;
-      var badfood = document.getElementById('Room3Kicker').value;
-      var room = document.getElementById('room3');
-      var kick = room.getElementsByTagName('li')[badfood];
-      d = new Date();
-      while (num <= badfood) {
-          // TODO: find a way to stop people from overflowing the room effectively
-          totalItems += 1;
-        var food = Menu3Name;
-        foodsRm3.push(food);
-        command = food;
-        commandprice = Menu3Price;
-        ConsoleLog()
-        var Newli = document.createElement('option');
-        // create new element and save it as new li
-        var ul = document.getElementById("Disposal");
-        // find the list inside the room
-        // add an ID to the list items so we can identify and remove it later
-        var newText = document.createTextNode(totalItems);
-        document.body.appendChild(Newli);
-        ul.appendChild(Newli);
-        var trudat = totalItems -1;
-        Newli.setAttribute("value",trudat);
-        Newli.appendChild(newText);
-        NumfoodsRm3 += 1;
-        num++
-      };
-      num = 0;
-    }
-    function clearRoom4() {
-      var num = 1;
-      var badfood = document.getElementById('Room4Kicker').value;
-      var room = document.getElementById('room4');
-      var kick = room.getElementsByTagName('li')[badfood];
-      d = new Date();
-      while (num <= badfood) {
-          // TODO: find a way to stop people from overflowing the room effectively
-          totalItems += 1;
-        var food = Menu4Name;
-        foodsRm4.push(food);
-        command = food;
-        commandprice = Menu4Price;
-        ConsoleLog()
-        var Newli = document.createElement('option');
-        // create new element and save it as new li
-        var ul = document.getElementById("Disposal");
-        // find the list inside the room
-        // add an ID to the list items so we can identify and remove it later
-        var newText = document.createTextNode(totalItems);
-        document.body.appendChild(Newli);
-        ul.appendChild(Newli);
-        var trudat = totalItems -1;
-        Newli.setAttribute("value",trudat);
-        Newli.appendChild(newText);
-        NumfoodsRm4 += 1;
-        num++
-      };
-      num = 0;
+
+function clearRoom2() {
+  var num = 1;
+  var badfood = document.getElementById('Room2Kicker').value;
+  var room = document.getElementById('room2');
+  var kick = room.getElementsByTagName('li')[badfood];
+  d = new Date();
+  while (num <= badfood) {
+    // TODO: find a way to stop people from overflowing the room effectively
+    totalItems += 1;
+    var food = Menu2Name;
+    foodsRm2.push(food);
+    command = food;
+    commandprice = Menu2Price;
+    ConsoleLog()
+    var Newli = document.createElement('option');
+    // create new element and save it as new li
+    var ul = document.getElementById("Disposal");
+    // find the list inside the room
+    // add an ID to the list items so we can identify and remove it later
+    var newText = document.createTextNode(totalItems);
+    document.body.appendChild(Newli);
+    ul.appendChild(Newli);
+    var trudat = totalItems - 1;
+    Newli.setAttribute("value", trudat);
+    Newli.appendChild(newText);
+    NumfoodsRm2 += 1;
+    num++
+  };
+  num = 0;
 }
+
+function clearRoom3() {
+  var num = 1;
+  var badfood = document.getElementById('Room3Kicker').value;
+  var room = document.getElementById('room3');
+  var kick = room.getElementsByTagName('li')[badfood];
+  d = new Date();
+  while (num <= badfood) {
+    // TODO: find a way to stop people from overflowing the room effectively
+    totalItems += 1;
+    var food = Menu3Name;
+    foodsRm3.push(food);
+    command = food;
+    commandprice = Menu3Price;
+    ConsoleLog()
+    var Newli = document.createElement('option');
+    // create new element and save it as new li
+    var ul = document.getElementById("Disposal");
+    // find the list inside the room
+    // add an ID to the list items so we can identify and remove it later
+    var newText = document.createTextNode(totalItems);
+    document.body.appendChild(Newli);
+    ul.appendChild(Newli);
+    var trudat = totalItems - 1;
+    Newli.setAttribute("value", trudat);
+    Newli.appendChild(newText);
+    NumfoodsRm3 += 1;
+    num++
+  };
+  num = 0;
+}
+
+function clearRoom4() {
+  var num = 1;
+  var badfood = document.getElementById('Room4Kicker').value;
+  var room = document.getElementById('room4');
+  var kick = room.getElementsByTagName('li')[badfood];
+  d = new Date();
+  while (num <= badfood) {
+    // TODO: find a way to stop people from overflowing the room effectively
+    totalItems += 1;
+    var food = Menu4Name;
+    foodsRm4.push(food);
+    command = food;
+    commandprice = Menu4Price;
+    ConsoleLog()
+    var Newli = document.createElement('option');
+    // create new element and save it as new li
+    var ul = document.getElementById("Disposal");
+    // find the list inside the room
+    // add an ID to the list items so we can identify and remove it later
+    var newText = document.createTextNode(totalItems);
+    document.body.appendChild(Newli);
+    ul.appendChild(Newli);
+    var trudat = totalItems - 1;
+    Newli.setAttribute("value", trudat);
+    Newli.appendChild(newText);
+    NumfoodsRm4 += 1;
+    num++
+  };
+  num = 0;
+}
+
 function clearRoom5() {
   var num = 1;
   var badfood = document.getElementById('Room5Kicker').value;
@@ -307,8 +327,8 @@ function clearRoom5() {
   var kick = room.getElementsByTagName('li')[badfood];
   d = new Date();
   while (num <= badfood) {
-      // TODO: find a way to stop people from overflowing the room effectively
-      totalItems += 1;
+    // TODO: find a way to stop people from overflowing the room effectively
+    totalItems += 1;
     var food = Menu5Name;
     foodsRm5.push(food);
     command = food;
@@ -322,14 +342,15 @@ function clearRoom5() {
     var newText = document.createTextNode(totalItems);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
-    var trudat = totalItems -1;
-    Newli.setAttribute("value",trudat);
+    var trudat = totalItems - 1;
+    Newli.setAttribute("value", trudat);
     Newli.appendChild(newText);
     NumfoodsRm5 += 1;
     num++
   };
   num = 0;
 }
+
 function clearRoom6() {
   var num = 1;
   var badfood = document.getElementById('Room6Kicker').value;
@@ -337,8 +358,8 @@ function clearRoom6() {
   var kick = room.getElementsByTagName('li')[badfood];
   d = new Date();
   while (num <= badfood) {
-      // TODO: find a way to stop people from overflowing the room effectively
-      totalItems += 1;
+    // TODO: find a way to stop people from overflowing the room effectively
+    totalItems += 1;
     var food = Menu6Name;
     foodsRm6.push(food);
     command = food;
@@ -352,8 +373,8 @@ function clearRoom6() {
     var newText = document.createTextNode(totalItems);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
-    var trudat = totalItems -1;
-    Newli.setAttribute("value",trudat);
+    var trudat = totalItems - 1;
+    Newli.setAttribute("value", trudat);
     Newli.appendChild(newText);
     NumfoodsRm6 += 1;
     num++
@@ -387,18 +408,23 @@ function ConsoleLog() {
   totalcalc()
 }
 var subtotal = 0;
-function totalcalc(){
-var subtotal = commandprice + subtotal;
-document.getElementById("total").innerHTML = "$" + subtotal;
+
+function totalcalc() {
+  subtotal = commandprice + subtotal;
+  document.getElementById("total").innerHTML = "$" + subtotal;
 }
-function paymentpage(){
-  sessionStorage.setItem('food1','NumfoodsRm1');
-  sessionStorage.setItem('food2','NumfoodsRm2');
-  sessionStorage.setItem('food3','NumfoodsRm3');
-  sessionStorage.setItem('food4','NumfoodsRm4');
-  sessionStorage.setItem('food5','NumfoodsRm5');
-  sessionStorage.setItem('food6','NumfoodsRm6');
-  sessionStorage.setItem('totalorder','totalItems');
-  sessionStorage.setItem('total','subtotal');
+
+function paymentpage() {
+  sessionStorage.setItem('food1', 'NumfoodsRm1');
+  sessionStorage.setItem('food2', 'NumfoodsRm2');
+  sessionStorage.setItem('food3', 'NumfoodsRm3');
+  sessionStorage.setItem('food4', 'NumfoodsRm4');
+  sessionStorage.setItem('food5', 'NumfoodsRm5');
+  sessionStorage.setItem('food6', 'NumfoodsRm6');
+  sessionStorage.setItem('totalorder', 'totalItems');
+  sessionStorage.setItem('total', 'subtotal');
   location = "checkout.html";
 }
+
+
+// ======================================checkout page shit============
