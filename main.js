@@ -202,7 +202,8 @@ function clearRoom1() {
     var newText = document.createTextNode(totalItems);
     document.body.appendChild(Newli);
     ul.appendChild(Newli);
-    Newli.setAttribute("value",totalItems);
+    var trudat = totalitem -1;
+    Newli.setAttribute("value",trudat);
     Newli.appendChild(newText);
     NumfoodsRm1 += 1;
     num++
