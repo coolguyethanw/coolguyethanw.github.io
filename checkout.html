@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+  <script src="main.js"></script>
   <style>
   </style>
 </head>
@@ -38,15 +39,17 @@
   var totalItems = sessionStorage.getItem("totalorder");
   var subtotal = sessionStorage.getItem("total");
   var gtotal = sessionStorage.getItem("total2");
-  window.alert(Menu6Price)
-  document.getElementById('total').innerHTML = gtotal;
-  document.getElementById('Gtotal').innerHTML = gtotal;
   }
   init()
-
+  order1()
+  order2()
+  order3()
+  order4()
+  order5()
+  order6()
   function order1(){
     num = 1;
-    while (num <= NumfooodsRm11){
+    while (num <= NumfoodsRm11){
       totalItems += 1;
       var food = Menu1Name;
       foodsRm1.push(food);
@@ -133,6 +136,23 @@
     ul.appendChild(Newli);
     Newli.appendChild(newText);
   }
+  function ConsoleLog2() {
+    // add food name to food list
+    var log = document.getElementById("logger");
+    // find the room that were about to thro w foods into
+    var checkIn = log.getElementsByTagName("li");
+    // find the list inside the room
+    var Newli = document.createElement('li');
+    // create new element and save it as new li
+    var ul = document.getElementById("logs");
+    var ol = document.getElementById("prices");
+    // find the list inside the room
+    // add an ID to the list items so we can identify and remove it later
+    var newText = document.createTextNode(command2);
+    document.body.appendChild(Newli);
+    ul.appendChild(Newli);
+    Newli.appendChild(newText);
+  }
   </script>
   <div class="navbar">
     <table width="100%">
@@ -167,10 +187,16 @@
       <tr width="100%">
         <td>
           <h5>SubTotal:</h5>
-          <h5 id="total">Total Amount Here</h5>
-          <h5>GrandTotal (+taxes):</h5>
-          <h5 id="Gtotal">Total Amount Here</h5>
+          <h5 id="total">should appear as total</h5>
+          <h5>GrandTotal (+taxes + tips):</h5>
+          <h5 id="Gtotal">if this doen't apear than gg</h5>
+          <input id="tip"/><button onlclick="tipcalc()">Add Tip</button>
           </ol>
+          <script>
+          function tipcalc(){
+            var tip = gtotal + document.getElementById('tip').value;
+            documet.getElementById('tip').innerHTML = tip;
+          }</script>
         </td>
       </tr>
     </table>

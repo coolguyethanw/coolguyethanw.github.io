@@ -413,7 +413,8 @@ function ConsoleLog() {
   Newli.appendChild(newPrice);
   totalcalc()
 }
-
+var subtotal
+var gtotal
 function totalcalc() {
   subtotal = commandprice + subtotal;
   document.getElementById("total").innerHTML = "$" + subtotal;
@@ -439,3 +440,123 @@ function paymentpage() {
 
 
 // ======================================checkout page shit============
+
+var NumfoodsRm11 = sessionStorage.getItem("food1");
+var NumfoodsRm22 = sessionStorage.getItem("food2");
+var NumfoodsRm33 = sessionStorage.getItem("food3");
+var NumfoodsRm44 = sessionStorage.getItem("food4");
+var NumfoodsRm55 = sessionStorage.getItem("food5");
+var NumfoodsRm66 = sessionStorage.getItem("food6");
+var Menu1Name = sessionStorage.getItem("Name1");
+var Menu1Price = sessionStorage.getItem("Price1");
+var Menu2Name = sessionStorage.getItem("Name2");
+var Menu2Price = sessionStorage.getItem("Price2");
+var Menu3Name = sessionStorage.getItem("Name3");
+var Menu3Price = sessionStorage.getItem("Price3");
+var Menu4Name = sessionStorage.getItem("Name4");
+var Menu4Price = sessionStorage.getItem("Price4");
+var Menu5Name = sessionStorage.getItem("Name5");
+var Menu5Price = sessionStorage.getItem("Price5");
+var Menu6Name = sessionStorage.getItem("Name6");
+var Menu6Price = sessionStorage.getItem("Price6");
+var totalItems = sessionStorage.getItem("totalorder");
+var subtotal = sessionStorage.getItem("total");
+var gtotal = sessionStorage.getItem("total2");
+
+document.getElementById('total').innerHTML = subtotal;
+document.getElementById('Gtotal').innerHTML = gtotal;
+function init(){
+  window.alert(Menu6Price)
+  document.getElementById('total').innerHTML = gtotal;
+  document.getElementById('Gtotal').innerHTML = gtotal;
+}
+
+function order1(){
+  num = 1;
+  while (num <= NumfoodsRm11){
+    totalItems += 1;
+    var food = Menu1Name;
+    foodsRm1.push(food);
+    command2 = food;
+    ConsoleLog2()
+  }
+  num = 0;
+}
+order1()
+function order2(){
+  num = 1;
+  while (num <= NumfoodsRm22){
+    totalItems += 1;
+    var food = Menu2Name;
+    foodsRm1.push(food);
+    command2 = food;
+    ConsoleLog2()
+  }
+  num = 0;
+}
+order2()
+function order3(){
+  num = 1;
+  while (num <= NumfoodsRm33){
+    totalItems += 1;
+    var food = Menu3Name;
+    foodsRm1.push(food);
+    command2 = food;
+    ConsoleLog2()
+  }
+  num = 0;
+}
+order3()
+function order4(){
+  num = 1;
+  while (num <= NumfoodsRm44){
+    totalItems += 1;
+    var food = Menu4Name;
+    foodsRm1.push(food);
+    command2 = food;
+    ConsoleLog2()
+  }
+  num = 0;
+}
+order4()
+function order5(){
+  num = 1;
+  while (num <= NumfoodsRm55){
+    totalItems += 1;
+    var food = Menu5Name;
+    foodsRm1.push(food);
+    command2 = food;
+    ConsoleLog2()
+  }
+  num = 0;
+}
+order5()
+function order6(){
+  num = 1;
+  while (num <= NumfoodsRm66){
+    totalItems += 1;
+    var food = Menu6Name;
+    foodsRm1.push(food);
+    command2 = food;
+    ConsoleLog2()
+  }
+  num = 0;
+}
+order6()
+function ConsoleLog2() {
+  // add food name to food list
+  var log = document.getElementById("logger");
+  // find the room that were about to thro w foods into
+  var checkIn = log.getElementsByTagName("li");
+  // find the list inside the room
+  var Newli = document.createElement('li');
+  // create new element and save it as new li
+  var ul = document.getElementById("logs");
+  var ol = document.getElementById("prices");
+  // find the list inside the room
+  // add an ID to the list items so we can identify and remove it later
+  var newText = document.createTextNode(command2);
+  document.body.appendChild(Newli);
+  ul.appendChild(Newli);
+  Newli.appendChild(newText);
+}
