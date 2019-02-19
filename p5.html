@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+    <style>
+      body{
+        overflow:hidden;
+        margin:0;
+        padding:0;
+      }
+    </style>
+  </head>
+  <body>
+    <div height="500px" width="500px" background-color="red">
+      Choose color!
+    <input id="rgb1"><input id="rgb2"><input id="rgb3">
+    <button onclick="askColor()">Enter</button>
+    <p id="currentC"></p>
+    </div>
+    <script>
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var weight = 3;
+    var color = rgb(0,0,0);
+    function askColor() {
+      var r = $.getElementById("rgb1").value
+      var g = $.getElementById("rgb2").value
+      var b = $.getElementById("rgb3").value
+      color = rgb(r,g,b);
+      $.getElementById("currentC").innerHTML = color;
+    }
+      function setup(){
+        createCanvas(w,h);
+      }
+      function draw(){
+        if (mouseIsPressed){
+                  strokeWeight(weight);
+        line(pmouseX,pmouseY,mouseX,mouseY);
+                  fill = color;
+        }
+      }
+      function keyPressed(){
+        if (keyCode == "38"){
+          weight += 1;
+        }
+        if (keyCode == "40"){
+          weight += -1;
+        }
+          if (keyCode == "82"){
+          var color = rgb(255,0,0);
+        }
+        if (keyCode == "71"){
+          var color = rgb(124,252,0);
+        }
+        if (keyCode == "81"){
+          var color = rgb((random(0-256),(random(0-256),(random(0-256));
+        }
+        if (keycode == "83"){
+          var x = prompt("what do want to save as");
+          save(x + ".jpg");
+        }
+      }
+      
+    </script>
+  </body>
+  
+</html>
