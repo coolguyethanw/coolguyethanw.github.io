@@ -1,6 +1,8 @@
 <html>
   <head>
+    
     <style>
+    
       body{
         margin:0px;
         padding:0;
@@ -14,23 +16,30 @@
         color:red;
       }
     </style>
-    <script src="p5.min.js"></script>
+    <script src="p5.gif.min.js"></script>
   </head>
   
   <body>
     <div>
-    <span>X:</span><p id="x"></p>
-    <span>Y:</span><p id="y"></p>
+      Chase the blue circle!
     <span><h1 id="status"></h1></span>
     </div>
     <script>
+    // attempting to make ball 1 spawn bombs for ball 2 to evade
       var w = window.innerWidth;
       var h = window.innerHeight;
+      var gif;
+      let timer = 5;
+      let timer2 = 5;
       var ball = new ball();
        var ball2 = new ball2();
        var killamine = new killamine();
        var killamine2 = new killamine2();
+        var killamine3 = new killamine3();
+               var killamine4 = new killamine4();
+        var killamine5 = new killamine5();
        var d = 0;
+       var minesize = 20;
       function setup(){
         createCanvas(w,h);
       }
@@ -45,6 +54,13 @@
         killamine.kill();
         killamine2.show();
         killamine2.kill();
+        killamine3.show();
+        killamine3.kill();
+         killamine4.show();
+        killamine4.kill();
+         killamine5.show();
+        killamine5.kill();
+  }
       };
 
       
@@ -76,12 +92,60 @@
             // down arrow
             this.y += 10;
           }
+                    if ((keyIsDown(39)) && (timer = 0)){
+            // space 2 lay mine
+            timer = 5.1;
+            spawnbomb()
+          }
         };
       }
-          function killamine(){
-            this.x = 350
-            this.y = 350
-            var size = 50;
+                      function spawnbomb(){
+                          
+  if (frameCount % 60 == 0 && timer2 > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    timer --;
+  }
+            this.x = ball.x;
+            this.y = ball.y;
+            var size = 20;
+            this.kill = function(){
+          d = dist(this.x,this.y,ball.x,ball.y)
+          d2 = dist(this.x,this.y,ball2.x,ball2.y)
+          // todo create seperate timer for this bomb
+          if (timer2 = 0){
+            fill(color('orange'));
+          ellipse(this.x,this.y,200,200);
+          fill(color('yellow'));
+          ellipse(this.x,this.y,100,100);
+          fill(color('red'));
+          ellipse(this.x,this.y,50,50);
+          image(gif, this.x, this.y);
+            // stop game and say gameover
+            if (d < 50 || d2 < 50){
+              
+            document.getElementById('status').innerHTML = "Game over!"
+            noLoop();
+            };
+          }
+        };
+      
+             this.show = function(){
+               var change = 1;
+          fill(color('black'));
+          ellipse(this.x,this.y,minesize,minesize);
+          if (change = 1) {
+            fill(color('black'));
+            change =- 1;
+          }
+          if (change = 0){
+            fill(color('red'));
+            change =+ 1;
+          }
+        };
+      };
+                      function killamine4(){
+            this.x = 500
+            this.y = 500
+            var size = 20;
             this.kill = function(){
           d = dist(this.x,this.y,ball.x,ball.y)
           d2 = dist(this.x,this.y,ball2.x,ball2.y)
@@ -101,13 +165,13 @@
              this.show = function(){
                var size = 50;
           fill(color('black'));
-          ellipse(this.x,this.y,size,size);
+          ellipse(this.x,this.y,minesize,minesize);
         };
       }
-        function killamine2(){
-            this.x = 850
-            this.y = 250
-            var size = 50;
+                      function killamine3(){
+            this.x = w/2
+            this.y = h/2
+            var size = 20;
             this.kill = function(){
           d = dist(this.x,this.y,ball.x,ball.y)
           d2 = dist(this.x,this.y,ball2.x,ball2.y)
@@ -123,15 +187,70 @@
             noLoop();
           }
         };
+      
              this.show = function(){
                var size = 50;
           fill(color('black'));
-          ellipse(this.x,this.y,size,size);
+          ellipse(this.x,this.y,minesize,minesize);
         };
-            
+      }
+                      function killamine2(){
+            this.x = 340
+            this.y = 420
+            var size = 20;
+            this.kill = function(){
+          d = dist(this.x,this.y,ball.x,ball.y)
+          d2 = dist(this.x,this.y,ball2.x,ball2.y)
+          if (d < 50 || d2 < 50){
+            fill(color('orange'));
+          ellipse(this.x,this.y,200,200);
+          fill(color('yellow'));
+          ellipse(this.x,this.y,100,100);
+          fill(color('red'));
+          ellipse(this.x,this.y,50,50);
+            // stop game and say gameonver
+            document.getElementById('status').innerHTML = "Game over!"
+            noLoop();
           }
+        };
+      
+             this.show = function(){
+               var size = 50;
+          fill(color('black'));
+          ellipse(this.x,this.y,minesize,minesize);
+        };
+      }
+                      function killamine(){
+            this.x = 370
+            this.y = 500
+            var size = 20;
+            this.kill = function(){
+          d = dist(this.x,this.y,ball.x,ball.y)
+          d2 = dist(this.x,this.y,ball2.x,ball2.y)
+          if (d < 50 || d2 < 50){
+            fill(color('orange'));
+          ellipse(this.x,this.y,200,200);
+          fill(color('yellow'));
+          ellipse(this.x,this.y,100,100);
+          fill(color('red'));
+          ellipse(this.x,this.y,50,50);
+            // stop game and say gameonver
+            document.getElementById('status').innerHTML = "Game over!"
+            noLoop();
+          }
+        };
+      
+             this.show = function(){
+               var size = 50;
+          fill(color('black'));
+          ellipse(this.x,this.y,minesize,minesize);
+        };
+      }
+      
+             
+            
         function ball2(){
-        this.x = 200;
+        this.x = 1000;
         this.y = 200;
         this.show = function(){
           fill(color('blue'));
@@ -161,7 +280,7 @@
           if (d < 50){
             // stop game and say gameonver
             noLoop();
-            window.alert("You Lose!")
+            window.alert("Blue Lose!")
             
           }
         }
