@@ -1,175 +1,287 @@
-<!DOCTYPE HTML>
 <html>
 
 <head>
-  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Varela+Round" rel="stylesheet">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
-  <script src="main.js"></script>
+
   <style>
+    body {
+      margin: 0px;
+      padding: 0;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    div {
+      border-style: dotted;
+    }
+
+    h1 {
+      color: red;
+    }
   </style>
-</head>
-
-<body>
-  <div class="navbar">
-    <table width="100%">
-      <tr>
-        <th>
-          Nano<span>Cafe</span>
-        </th>
-        <td><img src="NTlogo.png" class="logo"></td>
-        <th style="">
-          Nano<span>Cafe </span>
-        </th>
-      </tr>
-    </table>
-  </div>
-  <div id="room1">
-    <h2 id="fooditem1">Food 1</h2>
-    <h3 id="foodPrice1"></h3>
-    <img src="fishchips.png" onclick="addfoodrm1()" id="button1">
-    <div id="statusbar1">
-    </div>
-    <p id="foodDesc1"></p>
-    <select id="Room1Kicker">
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-      <option value="4">Four</option>
-    </select>
-    <button onclick="clearRoom1()" id="buttonCLR1">Order</button>
-  </div>
-  <!--<select id="Room1Kicker">
-      <option value="0">food 1</option>
-      <option value="1">food 2</option>
-      <option value="2">food 3</option>
-      <option value="3">food 4</option>
-    </select>
-  -->
-  <div id="room2">
-    <h2 id="fooditem2">Food 1</h2>
-    <h3 id="foodPrice2"></h3>
-    <img src="image.webp" onclick="addfoodrm2()" id="button2">
-    <div id="statusbar2">
-    </div>
-    <p id="foodDesc2"></p>
-    <select id="Room2Kicker">
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-      <option value="4">Four</option>
-    </select>
-    <button onclick="clearRoom2()" id="buttonCLR2">Order</button>
-  </div>
-  <div id="room3">
-    <h2 id="fooditem3">Food 1</h2>
-    <h3 id="foodPrice3"></h3>
-    <img src="chicken.png" onclick="addfoodrm3()" id="button3">
-    <div id="statusbar3">
-    </div>
-    <p id="foodDesc3"></p>
-    <select id="Room3Kicker">
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-      <option value="4">Four</option>
-    </select>
-    <button onclick="clearRoom3()" id="buttonCLR3">Order</button>
-  </div>
-  <div id="logger">
-    <h3>Order Box</h3>
-    <table id="ordert" width="100%">
-      <tr width="100%">
-        <td></td>
-        <td>Order</td>
-      </tr>
-      <tr width="100%">
-        <td>
-          <ol id="logs"></ol>
-        </td>
-        <td>
-          <ol>
-            <ol id="prices"> </ol>
-        </td>
-      </tr>
-      <tr width="100%">
-        <td>
-          <h5>SubTotal:</h5>
-          <h5 id="total">Total Amount Here</h5> 
-        </td>
-      </tr>
-      <tr width="100%">
-        <td>
-          <h5>Total:</h5>
-          <h5 id="total2">Total Amount Here</h5>
-          </ol>
-        </td>
-      </tr>
-    </table>
-    <select id="Disposal">
-    </select>
-    <button onclick="removeRoom1()">Remove Item</button><button onclick="paymentpage()">Submit Order</button>
-  </div>
-  <div id="room4">
-    <h2 id="fooditem4">Food 1</h2>
-    <h3 id="foodPrice4"></h3>
-    <img src="bento.png" onclick="addfoodrm4()" id="button4">
-    <div id="statusbar4">
-    </div>
-    <p id="foodDesc4"></p>
-    <select id="Room4Kicker">
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-      <option value="4">Four</option>
-    </select>
-    <button onclick="clearRoom4()" id="buttonCLR4">Order</button>
-  </div>
-  <div id="room5">
-    <h2 id="fooditem5">Food 1</h2>
-    <h3 id="foodPrice5"></h3>
-    <img src="omelet.png" onclick="addfoodrm5()" id="button5">
-    <div id="statusbar5">
-    </div>
-    <p id="foodDesc5"></p>
-    <select id="Room5Kicker">
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-      <option value="4">Four</option>
-    </select>
-    <button onclick="clearRoom5()" id="buttonCLR5">Order</button>
-  </div>
-  <div id="room6">
-    <h2 id="fooditem6">Food 1</h2>
-    <h3 id="foodPrice6"></h3>
-    <img src="donkburg.png" onclick="addfoodrm6()" id="button6">
-    <div id="statusbar6">
-    </div>
-    <p id="foodDesc6"></p>
-    <select id="Room6Kicker">
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-      <option value="4">Four</option>
-    </select>
-    <button onclick="clearRoom6()" id="buttonCLR6">Order</button>
-  </div>
-  <!--  <div id="room7">
+  <script src="p5.min.js"></script>
+  <script src="p5.gif.min.js"></script>
+  <script src="p5.collide2d.min.js"></script>
+  </head>
+   <body>
     <div>
+      <h1> Steal the Diamond! </h1>
+    Sebastian the explorer has to steal the diamond and bypass the ancient traps in his path!
+    <h1 id="status"></h1>
+      </div> <script>
+      // made by donald with a rockstar
+      // declaring resources
+      let lavagif
+      let diamondimg
+      let playerimg
+      let arrow1
+      let explosionanim
+      let explosound
+      let mineimg
+      let arrowTrap1_X = 0;
+    let arrowTrap1_Y = 0;
+ //   let arrowTrap2_X = 0;
+  //  let arrowTrap2_Y = 0;
+  //  let arrowTrap3_X = 0;
+  //  let arrowTrap3_Y = 0;
+    let dedsound
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var gif;
+    let timer = 5;
+    let timer2 = 5;
+    var player = new player();
+    var killamine = new killamine();
+    var killamine2 = new killamine2();
+    var killamine3 = new killamine3();
+    var killamine4 = new killamine4();
+    var arrowTrap1 = new arrowTrap1();
+    var diamond = new diamond();
+  //  var arrowTrap2 = new arrowTrap2();
+ //   var arrowTrap3 = new arrowTrap3();
+    var d = 0;
+    var minesize = 20;
 
-    </div>
-  <div id="room8">
-  </div>
--->
+    function setup() {
+      createCanvas(w, h);
+      gif = loadGif('explo.gif')
+      playerimg = loadImage('protag.png');
+      diamondimg = loadImage('diamond.png');
+      lavagif = loadGif('lava.gif');
+      explosionanim = loadGif('explo.gif');
+      arrow1 = loadImage('arrow.png');
+      mineimg = loadImage('mine.png');
+  //    dedsound = loadSound('ded.mp3');
+  //    explosound = loadSound('explo.mp3');
+    }
 
-  <!-- comments pertaining to HTML will by in js because html comments
-are painful to use -->
+    function draw() {
+      if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+        timer--;
+      }
+      background(255);
+      player.show();
+      player.move();
+      killamine.show();
+      killamine.kill();
+      killamine2.show();
+      killamine2.kill();
+      killamine3.show();
+      killamine3.kill();
+      killamine4.show();
+      killamine4.kill();
+     // arrowTrap1.show();
+     // arrowTrap1.kill();
+      diamond.show();
+      diamond.kill();
+      hit = collidePointRect(killamine.x,killamine.y,player.x,player.y,100,200);
+      hit = collidePointRect(killamine2.x,killamine2.y,player.x,player.y,100,200);
+      hit = collidePointRect(killamine3.x,killamine3.y,player.x,player.y,100,200);
+      hit = collidePointRect(killamine4.x,killamine4.y,player.x,player.y,200,100);
+      if (hit){
+        document.getElementById('status').innerHTML = "You are dead!"
+       noLoop();
+      }
+    }
+    function arrowTrap1(){
+ this.x = 125;
+ this.y = h;
+ var h = 10;
+ this.show = function(){
+   rect(this.x,this.y,h,30);
+   arrow1(img,this.x,this.y);
+   arrowTrap1_Y = arrowTrap1_Y + 9.5;
+   if (arrowTrap1_Y > w + h){
+     x = -h;
+   }
+ }
+ // gay
+   this.kill = function() {
+     if (hitar1 = true ) {
+       fill(color('red'));
+       ellipse(this.x, this.y, 50, 50);
+       // stop game and say gameonver
+    //   dedsound.play()
+       document.getElementById('status').innerHTML = "You are dead!"
+       noLoop();
+     }
+   }
+   };
 
-  <!-- script is to be the LAST thing in the body -->
-</body>
+
+    function player() {
+      this.x = 10;
+      this.y = 100;
+      this.show = function() {
+        rect(this.x, this.y,100,200);
+        image(playerimg,this.x,this.y,100,200);
+      };
+      this.move = function() {
+        if (keyIsDown(68) && (w > this.x +10)) {
+          this.x += 10;
+        } // right arrow
+        if (keyIsDown(65) && (w > this.x -10)) {
+          //leftarrow
+          this.x -= 10;
+        }
+        if (keyIsDown(87) && (h > this.y +10)) {
+          // up arrow
+          this.y -= 10;
+        }
+        if (keyIsDown(83) && (h > this.y -10)) {
+          // down arrow
+          this.y += 10;
+        }
+      };
+    }
+
+    function killamine4() {
+      this.x = 600
+      this.y = 100
+      var size = 20;
+      this.kill = function() {
+        d = dist(this.x - 30, this.y - 30, player.x, player.y)
+      };
+
+      this.show = function() {
+        var size = 50;
+        fill(color('red'));
+          image(mineimg,this.x,this.y);
+        rect(this.x, this.y,200,500);
+      };
+    }
+
+    function killamine3() {
+      this.x = w / 2
+      this.y = h / 2
+      var size = 20;
+      this.kill = function() {
+        d = dist(this.x, this.y, player.x, player.y)
+
+        if (d < 100) {
+          fill(color('orange'));
+          ellipse(this.x, this.y, 200, 200);
+          fill(color('yellow'));
+          ellipse(this.x, this.y, 100, 100);
+          fill(color('red'));
+          ellipse(this.x, this.y, 50, 50);
+          image(explosionanim, this.x, this.y);
+          // stop game and say gameonver
+          document.getElementById('status').innerHTML = "Game over!"
+          noLoop();
+      //    dedsound.play()
+        }
+      };
+
+      this.show = function() {
+        var size = 50;
+        fill(color('black'));
+        image(mineimg,this.x,this.y);
+        ellipse(this.x, this.y, minesize, minesize);
+      };
+    }
+
+    function killamine2() {
+      this.x = 340
+      this.y = 420
+      var size = 20;
+      this.kill = function() {
+        d = dist(this.x, this.y, player.x, player.y)
+
+        if (d < 50) {
+          fill(color('orange'));
+          ellipse(this.x, this.y, 200, 200);
+          fill(color('yellow'));
+          ellipse(this.x, this.y, 100, 100);
+          fill(color('red'));
+          ellipse(this.x, this.y, 50, 50);
+        image(explosionanim, this.x, this.y);
+          // stop game and say gameonver
+          document.getElementById('status').innerHTML = "Game over!"
+          noLoop();
+      //    dedsound.play()
+        }
+      };
+
+      this.show = function() {
+        var size = 50;
+        fill(color('black'));
+        image(mineimg,this.x,this.y);
+        ellipse(this.x, this.y, minesize, minesize);
+      };
+    }
+
+    function killamine() {
+      this.x = 370
+      this.y = 500
+      var size = 20;
+      this.kill = function() {
+        d = dist(this.x, this.y, player.x, player.y)
+
+        if (d < 50) {
+          fill(color('orange'));
+          ellipse(this.x, this.y, 200, 200);
+          fill(color('yellow'));
+          ellipse(this.x, this.y, 100, 100);
+          fill(color('red'));
+          ellipse(this.x, this.y, 50, 50);
+          image(explosionanim, this.x, this.y);
+          // stop game and say gameonver
+          document.getElementById('status').innerHTML = "Game over!"
+          noLoop();
+      //    dedsound.play()
+        }
+      };
+
+      this.show = function() {
+        var size = 50;
+        fill(color('black'));
+        image(mineimg,this.x,this.y);
+        ellipse(this.x, this.y, minesize, minesize);
+      };
+    }
+
+    function diamond() {
+      this.x = w - 10;
+      this.y = h/2;
+      var size = 20;
+      this.kill = function() {
+        d = dist(this.x, this.y, player.x, player.y)
+        if (d < 50) {
+          // stop game and say gameonver
+          document.getElementById('status').innerHTML = "Congratulations"
+          noLoop();
+        }
+      };
+
+      this.show = function() {
+        var size = 50;
+        fill(color('cyan'));
+        ellipse(this.x, this.y, minesize, minesize);
+        image(diamondimg,this.x,this.y);
+      };
+    }
+  </script>
+
+  </body>
 
 </html>

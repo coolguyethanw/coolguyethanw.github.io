@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href=”script.js”>
+    <style>
+      #bug1 {
+        background-color:green;
+        width:45vw;
+        height:40vh;
+        
+      }
+      #bug2 {
+        background-color:red;
+        width:45vw;
+        height:40vh;
+        float:right;
+        margin-top:-40vh;
+      }
+      button {
+        align:center;
+        margin:center;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <script>
+    burg1();
+    burg2();
+    text();
+      function burg1(){
+  var burger1 = {
+    burgname:"Mild Burger",
+    burgsacue:"Ketchup",
+    burgmeat:"Chicken",
+    veg:"lettuce",
+    price:5.99
+  };
+  
+}
+function burg2(){
+    var burger2 = {
+    burgname:"Spicy Burger",
+    burgsacue:"Hot Sauce",
+    burgmeat:"Spicy BBQ Chicken",
+    veg:"Tomato & Pickles",
+    price:6.99
+  };
+  function text() {
+    
+  
+  document.getElementById("burgname1").innerhtml = burger1.burgname;
+  document.getElementById("burgname2").innerhtml = burger2.burgname;
+  document.getElementById("burgsauce1").innerhtml = burger1.burgsacue;
+  document.getElementById("burgsauce2").innerhtml = burger2.burgsacue;
+  document.getElementById("burgmeat1").innerhtml = burger1.burgmeat;
+  document.getElementById("burgmeat2").innerhtml = burger2.burgmeat;
+  document.getElementById("veg1").innerhtml = burger1.veg;
+  document.getElementById("veg2").innerhtml = burger2.veg;
+  document.getElementById("price1").innerhtml = burger1.price;
+  document.getElementById("price2").innerhtml = burger1.veg;
+  }
+}
+function TaxCalc1(){
+ var x = burger1.price * .4712%;
+ document.getElementByID("result1").innerhtml = x;
+}
+function TaxCalc2(){
+ var x2 = burger2.price * .4712%;
+ document.getElementByID("result2").innerhtml = x2;
+}
+    </script>
+    <h1>Burger shop</h1>
+    <hr>
+    <div id=bug1>
+      <p id=burgname1></p>
+      <p id=burgsauce1></p>
+      <p id=burgmeat1></p>
+      <p id=veg1></p>
+      <p id=price1></p>
+      <p id=result1></p>
+      <button onclick=TaxCalc2>Buy</button>
+    </div>
+    <div id=bug2>
+      <p id=burgname2></p>
+      <p id=burgsauce2></p>
+      <p id=burgmeat2></p>
+      <p id=veg2></p>
+      <p id=price2></p>
+      <p id=reselt2></p>
+      <button onclick="TaxCalc1">Buy</button>
+    </div>
+  </body>
+</html>
