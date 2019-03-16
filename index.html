@@ -49,13 +49,14 @@
     var gif;
     let timer = 5;
     let timer2 = 5;
-    var player = new player();
     var killamine = new killamine();
     var killamine2 = new killamine2();
     var killamine3 = new killamine3();
     var killamine4 = new killamine4();
     var arrowTrap1 = new arrowTrap1();
+    var lava = new lava();
     var diamond = new diamond();
+    var player = new player()
   //  var arrowTrap2 = new arrowTrap2();
  //   var arrowTrap3 = new arrowTrap3();
     var d = 0;
@@ -82,33 +83,59 @@
       player.show();
       player.move();
       killamine.show();
-      killamine.kill();
+      //killamine.kill();
       killamine2.show();
-      killamine2.kill();
+     // killamine2.kill();
       killamine3.show();
-      killamine3.kill();
+    //  killamine3.kill();
       killamine4.show();
-      killamine4.kill();
+     // killamine4.kill();
      // arrowTrap1.show();
-     // arrowTrap1.kill();
+      //arrowTrap1.kill();
       diamond.show();
       diamond.kill();
-      hit = collidePointRect(killamine.x,killamine.y,player.x,player.y,100,200);
-      hit = collidePointRect(killamine2.x,killamine2.y,player.x,player.y,100,200);
-      hit = collidePointRect(killamine3.x,killamine3.y,player.x,player.y,100,200);
-      hit = collidePointRect(killamine4.x,killamine4.y,player.x,player.y,200,100);
+      lava.show();
+      hit = collideRectRect(killamine.x,killamine.y,minesize,minesize,player.x,player.y,100,200);
+      hit2 = collideRectRect(killamine2.x,killamine2.y,minesize,minesize,player.x,player.y,100,200);
+      hit3 = collideRectRect(killamine3.x,killamine3.y,minesize,minesize,player.x,player.y,100,200);
+      hit4 = collideRectRect(killamine4.x,killamine4.y,minesize,minesize,player.x,player.y,100,200);
+      hit5 = collideRectRect(lava.x,lava.y,200,500,player.x,player.y,100,200);
       if (hit){
+        document.getElementById('status').innerHTML = "You are dead!"
+       // fill(color('red'));
+       ellipse(killamine.x, killamine.y, 50, 50);
+       noLoop();
+      }
+      if (hit2){
+        document.getElementById('status').innerHTML = "You are dead!"
+       // fill(color('red'));
+       ellipse(killamine2.x, killamine2.y, 50, 50);
+       noLoop();
+      }
+      if (hit3){
+        document.getElementById('status').innerHTML = "You are dead!"
+      //  fill(color('red'));
+       ellipse(killamine2.x, killamine2.y, 50, 50);
+       noLoop();
+      }
+      if (hit4){
+        document.getElementById('status').innerHTML = "You are dead!"
+      //  fill(color('red'));
+       ellipse(killamine3.x, killamine3.y, 50, 50);
+       noLoop();
+      }
+      if (hit5){
         document.getElementById('status').innerHTML = "You are dead!"
        noLoop();
       }
     }
     function arrowTrap1(){
- this.x = 125;
+ this.x = 225;
  this.y = h;
  var h = 10;
  this.show = function(){
    rect(this.x,this.y,h,30);
-   arrow1(img,this.x,this.y);
+  // arrow1(img,this.x,this.y);
    arrowTrap1_Y = arrowTrap1_Y + 9.5;
    if (arrowTrap1_Y > w + h){
      x = -h;
@@ -134,6 +161,7 @@
       this.show = function() {
         rect(this.x, this.y,100,200);
         image(playerimg,this.x,this.y,100,200);
+        fill(color('white'))
       };
       this.move = function() {
         if (keyIsDown(68) && (w > this.x +10)) {
@@ -143,11 +171,11 @@
           //leftarrow
           this.x -= 10;
         }
-        if (keyIsDown(87) && (h > this.y +10)) {
+        if (keyIsDown(87) && (h > this.y -10)) {
           // up arrow
           this.y -= 10;
         }
-        if (keyIsDown(83) && (h > this.y -10)) {
+        if (keyIsDown(83) && (h > this.y +10)) {
           // down arrow
           this.y += 10;
         }
@@ -155,7 +183,7 @@
     }
 
     function killamine4() {
-      this.x = 600
+      this.x = 1350
       this.y = 100
       var size = 20;
       this.kill = function() {
@@ -165,8 +193,8 @@
       this.show = function() {
         var size = 50;
         fill(color('red'));
-          image(mineimg,this.x,this.y);
-        rect(this.x, this.y,200,500);
+          image(mineimg,this.x,this.y, minesize, minesize);
+        rect(this.x, this.y,minesize,minesize);
       };
     }
 
@@ -195,14 +223,14 @@
       this.show = function() {
         var size = 50;
         fill(color('black'));
-        image(mineimg,this.x,this.y);
+        image(mineimg,this.x,this.y, minesize, minesize);
         ellipse(this.x, this.y, minesize, minesize);
       };
     }
-
+  
     function killamine2() {
-      this.x = 340
-      this.y = 420
+      this.x = 1040
+      this.y = 120
       var size = 20;
       this.kill = function() {
         d = dist(this.x, this.y, player.x, player.y)
@@ -225,14 +253,14 @@
       this.show = function() {
         var size = 50;
         fill(color('black'));
-        image(mineimg,this.x,this.y);
+        image(mineimg,this.x,this.y, minesize, minesize);
         ellipse(this.x, this.y, minesize, minesize);
       };
     }
 
     function killamine() {
-      this.x = 370
-      this.y = 500
+      this.x = 870
+      this.y = 20
       var size = 20;
       this.kill = function() {
         d = dist(this.x, this.y, player.x, player.y)
@@ -255,18 +283,18 @@
       this.show = function() {
         var size = 50;
         fill(color('black'));
-        image(mineimg,this.x,this.y);
+        image(mineimg,this.x,this.y, minesize, minesize);
         ellipse(this.x, this.y, minesize, minesize);
       };
     }
 
     function diamond() {
-      this.x = w - 10;
+      this.x = w - 50;
       this.y = h/2;
       var size = 20;
       this.kill = function() {
         d = dist(this.x, this.y, player.x, player.y)
-        if (d < 50) {
+        if (d < 200) {
           // stop game and say gameonver
           document.getElementById('status').innerHTML = "Congratulations"
           noLoop();
@@ -280,6 +308,19 @@
         image(diamondimg,this.x,this.y);
       };
     }
+    function lava() {
+      this.x = w - 400
+      this.y = 220
+      var size = 20;
+
+      this.show = function() {
+        var size = 50;
+        fill(color('red'));
+      //  image(lavagif,this.x,this.y,200,500);
+        rect(this.x, this.y, 200,500);
+      };
+    }
+
   </script>
 
   </body>
