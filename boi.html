@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <style>
+    body{
+      overflow:hidden;
+      font-weight: bold;
+    }
+    span{
+      font-weight: normal;
+    }
+    </style>
+    <script src="p5.min.js"></script>
+    <script src="p5.gif.min.js"></script>
+    <script src="p5.collide2d.min.js"></script>
+    <script src="p5sound.js"></script>
+  </head>
+  <body>Health points:<span id="2">Full</span>
+                    score:<span id="3">full</span>
+                    Ammo(gun):<span id="4">full</span>
+<script>
+var jumper = new jumper();
+var blocker = new blocker();
+var blocker2 = new blocker2();
+var blocker3 = new blocker3();
+var blocker4 = new blocker4();
+var tank1 = new tank1();
+var hit = false;
+var hit2 = false;
+var hit3= false;
+var points = 20;
+var score = 0
+var dead = false;
+var bullets = 500;
+var health = 60;
+var protag;
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      function preload(){
+        soundFormats('mp3')
+        helisound = loadSound('helicopter.mp3')
+        explosion = loadSound('explo.mp3')
+      }
+      function setup(){
+        createCanvas(w,h);
+        collideDebug(true);
+        protag = loadGif('heli.gif')
+        protagdead = loadGif('explo1.gif')
+        missile = loadGif('missile.gif')
+        deadpro = loadGif('deadpro.gif')
+        explo3 = loadGif('explo3.gif');
+        tank = loadImage('T-55.png')
+        helisound.loop();
+      }
+      function draw(){
+        ++ score
+        document.getElementById('3').innerHTML = score;
+        background(200,600,2500);
+        fill(color('tan'))
+        rect(0,850,2450,100)
+        jumper.show();
+        jumper.update();
+                blocker.show();
+        blocker.update();
+        blocker2.show();
+        blocker2.update();
+        blocker3.show();
+        blocker3.update();
+        blocker4.show();
+        blocker4.update();
+        tank1.show()
+        tank1.update()
+        document.getElementById('4').innerHTML = bullets;
+                  if (keyIsDown(68)){
+          jumper.x += 5;
+        }
+            if (keyIsDown(65)){
+          jumper.x -= 5;
+        }
+        if((mouseIsPressed) && (bullets > 0)){
+          line(jumper.x+200,jumper.y+56,mouseX,mouseY)
+          fill(color('yellow'))
+          bullets --
+        }
+       hit = collideRectRect(blocker.x,blocker.y,50,10,jumper.x,jumper.y,245,89);
+       hit2 = collideRectRect(blocker2.x,blocker2.y,50,10,jumper.x,jumper.y,245,89);
+       hit3 = collideRectRect(blocker3.x,blocker3.y,50,10,jumper.x,jumper.y,245,89);
+       hit4 = collideRectRect(blocker4.x,blocker4.y,50,10,jumper.x,jumper.y,245,89)
+        hit5 = collideRectRect(0,850,2450,100,jumper.x,jumper.y,245,89)
+        hit6 = collideLineRect(mouseX,mouseY,tank1.x,tank1.y,254,79)
+      if (hit){
+          points =- 15;
+          document.getElementById('2').innerHTML = points;
+          console.log("u got hit bruh moment")
+       }
+       if (hit2){
+          -- points
+          document.getElementById('2').innerHTML = points;
+          console.log("u got hit bruh moment")
+       }
+       if (hit3){
+          -- points
+          document.getElementById('2').innerHTML = points;
+          console.log("u got hit bruh moment")
+      }
+      if (hit4){
+         -- points
+         document.getElementById('2').innerHTML = points;
+         console.log("u got hit bruh moment")
+     }
+     if (hit5){
+        points = "you crashed dumbass";
+        score = -100000000000;
+        document.getElementById('2').innerHTML = points;
+        document.getElementById('3').innerHTML = score;
+        console.log("u got hit bruh moment")
+        image(explo3,jumper.x,jumper.y-75)
+        explosion.play();
+        endgame();
+        crashed();
+        helisound.stop();
+    }
+    if (hit6){
+      --health
+   }
+   if (health < 0){
+     tank1.explo();
+   }
+       if (points < 0){
+         jumper.explo();
+         jumper.gravity = 2.35
+         setTimeout(endgame,503);
+        // noLoop()
+        // window.alert("youdead!");
+      }
+     }
+      function endgame(){
+        image(deadpro,jumper.x+50,jumper.y-75);
+        setTimeout(bruh,355)
+      }
+      function bruh(){
+        noLoop()
+      }
+      function jumper(){
+        this.x = 70;
+        this.y = 0;
+        this.gravity = .5;// gravitational force
+        this.lift = - 20;// opposite force
+        this.velocity = 0;
+        this.show = function(){
+        //  fill(color('green'));
+      //   rect(this.x,this.y,245,89)
+        image(protag,this.x -25,this.y -56);
+      }
+        this.explo = function(){
+          fill(color('orange'));
+          helisound.stop();
+        //  ellipse(this.x,this.y,250)
+          image(protagdead,this.x+60,this.y-50);
+          explosion.play();
+        }
+        this.up = function(){
+          this.velocity += this.lift;
+
+        }
+        document.getElementById("2").innerHTML = points;
+        this.update = function(){
+          this.velocity += this.gravity; //gravity applied when not jumping
+          this.y += this.velocity;
+          this.velocity *= 0.8 // Air resistance
+          if (this.y > h){
+            this.y = h
+            this.velocity = 0
+          }
+          if (this.y < 0){
+            this.y = 0;
+            this.velocity = 0;
+          }
+        }
+      }// obj end
+        function blocker(){
+        this.x = 1000;
+        this.y = 200;
+        this.show = function(){
+          image(missile,this.x,this.y);
+
+        };
+        this.update = function(){
+          this.x -= 6;
+          if(this.x < -150){
+            var r = random(20,h);
+            this.x = 2500;
+            this.y = r;
+          }
+        }
+      }
+      function keyPressed(){
+        if (keyCode === 32){
+          jumper.up();
+        }
+          if (keyCode === 87){
+          jumper.up();
+        }
+                  if (keyCode === 89){
+          jumper.x += 5;
+        }
+            if (keyCode === 65){
+          jumper.x -= 5;
+        }
+      }
+      function blocker2(){
+        this.x = 1200;
+        this.y = 200;
+        this.show = function(){
+                    image(missile,this.x,this.y);
+
+        };
+        this.update = function(){
+          this.x -= 7;
+          if(this.x < -150){
+            var r = random(20,h);
+            this.x = 2500;
+            this.y = r;
+          }
+        }
+      }
+
+      function blocker3(){
+        this.x = 1000;
+        this.y = 200;
+        this.show = function(){
+                    fill(color('red'));
+                    image(missile,this.x,this.y);
+
+        };
+        this.update = function(){
+          this.x -= 5;
+          if(this.x < -150){
+            var r = random(20,h);
+            this.x = 2500;
+            this.y = r;
+          }
+        }
+      }
+      function blocker4(){
+      this.x = 1000;
+      this.y = 250;
+      this.show = function(){
+        image(missile,this.x,this.y);
+
+      };
+      this.update = function(){
+        this.x -= 6;
+        if(this.x < -170){
+          var r = random(20,h);
+          this.x = 2500;
+          this.y = r;
+        }
+      }
+    }
+      function tank1(){
+      this.x = 1000;
+      this.y = 790;
+      this.show = function(){
+        image(tank,this.x,this.y);
+
+      };
+      this.update = function(){
+        this.x -= 6;
+        if(this.x < -170){
+          var r = random(20,h);
+          this.x = 2500;
+          this.y = 200;
+        }
+        this.explo = function(){
+          fill(color('orange'));
+        //  ellipse(this.x,this.y,250)
+          image(protagdead,this.x+60,this.y-50);
+        }
+      }
+    }
+    </script>
+  </body>
+</html>
