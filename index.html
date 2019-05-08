@@ -8,19 +8,19 @@
     <h1>X:</h1><h1 id="y"></h1>
     <h1>Y:</h1><h1 id="z"></h1>
     <script>
-    var x = accelerationX
-    var y = accelerationY
-    var z = accelerationZ
     var $ = document
       function setup() {
   createCanvas(100, 100, WEBGL);
+      var x = accelerationX
+    var y = accelerationY
+    var z = accelerationZ
 }
 function draw() {
   background(255);
   rotateX(x);
   rotateY(Y);
   rotateZ(z)
-  box();
+  box(100);
   $.getElementById("x").innerHTML = x;
   $.getElementById("y").innerHTML = y;
   $.getElementById("z").innerHTML = z;
