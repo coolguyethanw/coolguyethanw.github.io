@@ -38,17 +38,17 @@ var protag;
       var w = window.innerWidth;
       var h = window.innerHeight;
       function preload(){
-        window.alert("pre")
+      //  window.alert("pre")
         console.log(1);
         soundFormats('mp3')
         helisound = loadSound('helicopter.mp3')
         explosion = loadSound('explo.mp3')
         console.log("Preload complete!")
-        window.alert("predone")
+      //  window.alert("predone")
       }
       function setup(){
         console.log("Starting setup!")
-        window.alert("setup1")
+       // window.alert("setup1")
         createCanvas(w,h);
         collideDebug(true);
         protag = loadGif('heli.gif')
@@ -59,39 +59,39 @@ var protag;
         tank = loadImage('T-55.png')
         helisound.loop();
         console.log("setup complete! Now playing!")
-        window.alert("setup2")
+     //   window.alert("setup2")
       }
       function draw(){
-        window.alert("1")
+      //  window.alert("1")
         ++ score
         document.getElementById('3').innerHTML = score;
-        window.alert("1")
+        //window.alert("1")
         background(200,600,2500);
-        window.alert("2")
+        //window.alert("2")
         fill(color('tan'))
-        window.alert("3")
+        //window.alert("3")
         rect(0,850,2450,100)
-        window.alert("4")
+        //window.alert("4")
         jumper.show();
-        window.alert("5")
+        //window.alert("5")
         jumper.update();
-        window.alert("6")
+        //window.alert("6")
                 blocker.show();
-        window.alert("7")
+        //window.alert("7")
         blocker.update();
-        window.alert("8")
+        //window.alert("8")
         blocker2.show();
-        window.alert("9")
+        //window.alert("9")
         blocker2.update();
-        window.alert("10")
+        //window.alert("10")
         blocker3.show();
-        window.alert("11")
+        //window.alert("11")
         blocker3.update();
-        window.alert("12")
+        //window.alert("12")
         blocker4.show();
-        window.alert("13")
+        //window.alert("13")
         blocker4.update();
-        window.alert("14")
+        //window.alert("14")
         tank1.show()
         tank1.update()
         document.getElementById('4').innerHTML = bullets;
@@ -174,7 +174,7 @@ var protag;
         this.lift = - 20;// opposite force
         this.velocity = 0;
         this.show = function(){
-          window.alert("jumpshow")
+          //window.alert("jumpshow")
           fill(color('green'));
          rect(this.x,this.y,245,89)
           if (protag.loaded()) {
