@@ -18,6 +18,7 @@
                     score:<span id="3">full</span>
                     Ammo(gun):<span id="4">full</span>
 <script>
+  console.log("Initializing")
 var jumper = new jumper();
 var blocker = new blocker();
 var blocker2 = new blocker2();
@@ -36,11 +37,14 @@ var protag;
       var w = window.innerWidth;
       var h = window.innerHeight;
       function preload(){
+        console.log(1);
         soundFormats('mp3')
         helisound = loadSound('helicopter.mp3')
         explosion = loadSound('explo.mp3')
+        console.log("Preload complete!")
       }
       function setup(){
+        console.log("Starting setup!")
         createCanvas(w,h);
         collideDebug(true);
         protag = loadGif('heli.gif')
@@ -50,6 +54,7 @@ var protag;
         explo3 = loadGif('explo3.gif');
         tank = loadImage('T-55.png')
         helisound.loop();
+        console.log("setup complete! Now playing!")
       }
       function draw(){
         ++ score
@@ -121,6 +126,7 @@ var protag;
     }
     if (hit6){
       --health
+      console.log("HIT")
    }
    if (health < 0){
      tank1.explo();
