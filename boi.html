@@ -244,7 +244,9 @@ var protag;
         this.x = 1200;
         this.y = 200;
         this.show = function(){
-                    image(missile,this.x,this.y);
+                                    if (missile.loaded()) {
+                   image(missile,this.x,this.y);
+  }
 
         };
         this.update = function(){
@@ -262,7 +264,9 @@ var protag;
         this.y = 200;
         this.show = function(){
                     fill(color('red'));
-                    image(missile,this.x,this.y);
+                                   if (missile.loaded()) {
+                   image(missile,this.x,this.y);
+  }
 
         };
         this.update = function(){
@@ -278,7 +282,9 @@ var protag;
       this.x = 1000;
       this.y = 250;
       this.show = function(){
-        image(missile,this.x,this.y);
+                     if (missile.loaded()) {
+                   image(missile,this.x,this.y);
+  }
 
       };
       this.update = function(){
