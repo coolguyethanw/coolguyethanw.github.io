@@ -19,6 +19,7 @@
                     Ammo(gun):<span id="4">full</span>
 <script>
   console.log("Initializing")
+  window.alert("init")
 var jumper = new jumper();
 var blocker = new blocker();
 var blocker2 = new blocker2();
@@ -37,14 +38,17 @@ var protag;
       var w = window.innerWidth;
       var h = window.innerHeight;
       function preload(){
+        window.alert("pre")
         console.log(1);
         soundFormats('mp3')
         helisound = loadSound('helicopter.mp3')
         explosion = loadSound('explo.mp3')
         console.log("Preload complete!")
+        window.alert("predone")
       }
       function setup(){
         console.log("Starting setup!")
+        window.alert("setup1")
         createCanvas(w,h);
         collideDebug(true);
         protag = loadGif('heli.gif')
@@ -55,6 +59,7 @@ var protag;
         tank = loadImage('T-55.png')
         helisound.loop();
         console.log("setup complete! Now playing!")
+        window.alert("setup2")
       }
       function draw(){
         ++ score
