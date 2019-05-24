@@ -177,7 +177,9 @@ var protag;
           window.alert("jumpshow")
           fill(color('green'));
          rect(this.x,this.y,245,89)
-        image(protag,this.x -25,this.y -56);
+          if (protag.loaded()) {
+            image(protag,this.x -25,this.y -56);
+  }
           window.alert("jumpshowdone")
       }
         this.explo = function(){
@@ -210,7 +212,9 @@ var protag;
         this.x = 1000;
         this.y = 200;
         this.show = function(){
-          image(missile,this.x,this.y);
+                 if (missile.loaded()) {
+                   image(missile,this.x,this.y);
+  }
 
         };
         this.update = function(){
