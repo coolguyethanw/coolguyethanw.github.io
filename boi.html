@@ -167,15 +167,18 @@ var protag;
         noLoop()
       }
       function jumper(){
+        window.alert("jump1")
         this.x = 70;
         this.y = 0;
         this.gravity = .5;// gravitational force
         this.lift = - 20;// opposite force
         this.velocity = 0;
         this.show = function(){
-        //  fill(color('green'));
-      //   rect(this.x,this.y,245,89)
+          window.alert("jumpshow")
+          fill(color('green'));
+         rect(this.x,this.y,245,89)
         image(protag,this.x -25,this.y -56);
+          window.alert("jumpshowdone")
       }
         this.explo = function(){
           fill(color('orange'));
